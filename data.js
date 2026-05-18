@@ -137,7 +137,7 @@ const campData = [
         "date": "2020/11/20",
         "location": "53.531116661915654, -113.57855666421239",
         "city": "Edmonton, AB",
-        "note": "This is the pizza place."
+        "note": "This is the place where he gets the pizza."
     },
     {
         "title": "Train Wreck Camping",
@@ -227,7 +227,7 @@ const campData = [
         "date": "2021/03/25",
         "location": "49.478354252499564, -111.44743950571137",
         "city": "Foremost, AB",
-        "note": "The motel where Steve and his wife stay."
+        "note": "This is the motel where Steve and his wife stay."
     },
     {
         "title": "Heat Wave Yurt Glamping",
@@ -287,6 +287,6 @@ const campData = [
         "date": "2023/04/14",
         "location": "48.46205431611329, -123.5617658642171",
         "city": "Victoria, BC",
-        "note": "The campground he's staying at."
+        "note": "This is the campground he's staying at."
     },
 ];
