@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunker Down Explorer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Roboto Condensed"', 'sans-serif'],
+                    },
+                    colors: {
+                        zinc: {
+                            50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                            400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                            800: '#27272a', 900: '#18181b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-zinc-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 transition-colors duration-300 font-sans antialiased flex flex-col p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto w-full flex flex-col h-full gap-6">
+
+        <header class="flex justify-between items-start md:items-center mb-6">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-widest uppercase text-zinc-900 dark:text-zinc-100">
+                🏕️ HUNKER DOWN EXPLORER
+            </h1>
+
+            <button id="theme-toggle"
+                class="p-2 mt-1 rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors focus:outline-none shrink-0"
+                aria-label="Toggle Theme">
+                <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
+                </svg>
+                <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                    </path>
+                </svg>
+            </button>
+        </header>
+
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-lg mr-2">Filter</span>
+                <button id="btn-stealth"
+                    class="px-5 py-2 font-bold bg-zinc-300 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-600 transition">Stealth</button>
+                <button id="btn-nonstealth"
+                    class="px-5 py-2 font-bold bg-zinc-300 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-600 transition">Non-Stealth</button>
+            </div>
+            <div class="flex-grow w-full md:w-auto">
+                <input type="text" id="search-input" placeholder="Search..."
+                    class="w-full border-2 border-zinc-900 dark:border-zinc-600 bg-white dark:bg-zinc-800 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-zinc-500 font-bold text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 transition-colors">
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6 flex-grow overflow-hidden">
+
+            <div class="w-full md:w-1/3 flex flex-col gap-3 overflow-y-auto pr-2 pb-4" id="camp-list">
+            </div>
+
+            <div
+                class="w-full md:w-2/3 flex flex-col border-2 border-zinc-900 dark:border-zinc-600 bg-white dark:bg-zinc-800 transition-colors">
+
+                <div
+                    class="h-[50vh] md:h-[60vh] shrink-0 border-b-2 border-zinc-900 dark:border-zinc-600 relative bg-zinc-200 dark:bg-zinc-700 transition-colors">
+                    <iframe id="map-frame" width="100%" height="100%" frameborder="0" style="border:0" src=""
+                        allowfullscreen></iframe>
+                </div>
+
+                <div class="p-6 flex flex-col flex-grow overflow-y-auto">
+                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                        <span id="detail-badge"
+                            class="px-2 py-1 text-sm font-bold text-white bg-zinc-500">Stealth</span>
+                        <h2 id="detail-title" class="text-xl md:text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                            Camp Title</h2>
+                    </div>
+
+                    <p id="detail-description"
+                        class="text-zinc-600 dark:text-zinc-300 mb-auto text-base font-medium leading-relaxed mt-2">
+                    </p>
+
+                    <div class="flex flex-wrap flex-row justify-between items-end mt-6 gap-4">
+                        <a id="detail-video" href="#" target="_blank"
+                            class="px-6 py-2 bg-red-600 text-white font-bold text-sm tracking-wide hover:bg-red-700 transition whitespace-nowrap">
+                            WATCH THE VIDEO
+                        </a>
+                        <div
+                            class="flex flex-wrap items-center gap-2 text-sm font-bold text-zinc-500 dark:text-zinc-400">
+                            <a id="detail-map" href="#" target="_blank"
+                                class="text-blue-500 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300 transition">
+                                Check on Google Maps
+                            </a>
+                            <span id="detail-city" class="text-pink-600 dark:text-pink-400 ml-2">📍 City</span>
+                            <span id="detail-date" class="ml-2">🗓️ Date</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="text-center text-sm font-bold text-zinc-500 dark:text-zinc-400 mt-4 shrink-0">
+            Made with ❤️ and ☕ by Fans for Fans
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+
+    <script>
+        // THEME TOGGLE
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = localStorage.getItem('color-theme');
+
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function () {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // APP LOGIC
+        let filteredData = [...campData];
+        let currentFilter = null;
+        let activeCamp = filteredData[0];
+
+        const listContainer = document.getElementById('camp-list');
+        const searchInput = document.getElementById('search-input');
+        const btnStealth = document.getElementById('btn-stealth');
+        const btnNonstealth = document.getElementById('btn-nonstealth');
+
+        function renderList() {
+            listContainer.innerHTML = '';
+
+            if (filteredData.length === 0) {
+                listContainer.innerHTML = '<p class="text-zinc-500 dark:text-zinc-400 font-bold p-4">No results found.</p>';
+                return;
+            }
+
+            filteredData.forEach(camp => {
+                const isSelected = activeCamp === camp;
+
+                const badgeText = camp.stealth ? 'Stealth' : 'Non-stealth';
+                const badgeStyle = camp.stealth
+                    ? 'bg-zinc-500 text-white border border-zinc-500 dark:bg-zinc-600 dark:border-zinc-500'
+                    : 'bg-zinc-200 text-zinc-600 border border-zinc-400 dark:bg-zinc-700 dark:text-zinc-300 dark:border-zinc-600';
+
+                const bgClass = isSelected
+                    ? 'bg-zinc-400 dark:bg-zinc-600 border-zinc-900 dark:border-zinc-400'
+                    : 'bg-white dark:bg-zinc-800 border-zinc-900 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-700';
+
+                const item = document.createElement('div');
+                item.className = `p-4 border-2 cursor-pointer transition-colors flex flex-col shrink-0 ${bgClass}`;
+                item.innerHTML = `
+                    <h3 class="font-bold text-zinc-900 dark:text-zinc-100 text-lg leading-tight mb-2">${camp.title}</h3>
+                    <div class="flex justify-between items-center text-sm font-bold mt-auto">
+                        <span class="px-2 py-0.5 ${badgeStyle}">${badgeText}</span>
+                        <span class="text-zinc-600 dark:text-zinc-400 flex items-center gap-1">
+                            <span class="text-blue-400 dark:text-blue-500">🗓️</span> ${camp.date}
+                        </span>
+                    </div>
+                `;
+
+                item.onclick = () => {
+                    activeCamp = camp;
+                    renderList();
+                    renderDetails();
+                };
+                listContainer.appendChild(item);
+            });
+        }
+
+        function renderDetails() {
+            if (!activeCamp) return;
+
+            const mapFrame = document.getElementById('map-frame');
+            mapFrame.src = `https://maps.google.com/maps?q=${encodeURIComponent(activeCamp.location)}&t=k&z=18&ie=UTF8&iwloc=&output=embed`;
+
+            document.getElementById('detail-title').innerText = activeCamp.title;
+            document.getElementById('detail-description').innerText = activeCamp.description;
+
+            const badge = document.getElementById('detail-badge');
+            badge.innerText = activeCamp.stealth ? 'Stealth' : 'Non-stealth';
+            badge.className = activeCamp.stealth
+                ? 'px-2 py-1 text-sm font-bold text-white bg-zinc-500 dark:bg-zinc-600'
+                : 'px-2 py-1 text-sm font-bold text-zinc-600 bg-zinc-200 border border-zinc-400 dark:text-zinc-300 dark:bg-zinc-700 dark:border-zinc-600';
+
+            document.getElementById('detail-city').innerHTML = `📍 ${activeCamp.city}`;
+            document.getElementById('detail-date').innerHTML = `🗓️ ${activeCamp.date}`;
+            document.getElementById('detail-video').href = activeCamp.url;
+
+            document.getElementById('detail-map').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activeCamp.location)}`;
+        }
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase();
+
+            filteredData = campData.filter(camp => {
+                if (currentFilter === 'stealth' && !camp.stealth) return false;
+                if (currentFilter === 'non-stealth' && camp.stealth) return false;
+
+                if (query) {
+                    const statusText = camp.stealth ? "stealth" : "non-stealth";
+                    return (
+                        camp.title.toLowerCase().includes(query) ||
+                        camp.city.toLowerCase().includes(query) ||
+                        camp.date.includes(query) ||
+                        statusText.includes(query)
+                    );
+                }
+                return true;
+            });
+
+            if (!filteredData.includes(activeCamp)) {
+                activeCamp = filteredData.length > 0 ? filteredData[0] : null;
+            }
+
+            updateFilterButtons();
+            renderList();
+            renderDetails();
+        }
+
+        function updateFilterButtons() {
+            const activeStyle = 'bg-zinc-500 dark:bg-zinc-600 text-white border border-zinc-500 shadow-inner';
+            const inactiveStyle = 'bg-zinc-300 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 border border-transparent';
+
+            btnStealth.className = `px-5 py-2 font-bold transition ${currentFilter === 'stealth' ? activeStyle : inactiveStyle}`;
+            btnNonstealth.className = `px-5 py-2 font-bold transition ${currentFilter === 'non-stealth' ? activeStyle : inactiveStyle}`;
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+
+        btnStealth.addEventListener('click', () => {
+            currentFilter = currentFilter === 'stealth' ? null : 'stealth';
+            applyFilters();
+        });
+
+        btnNonstealth.addEventListener('click', () => {
+            currentFilter = currentFilter === 'non-stealth' ? null : 'non-stealth';
+            applyFilters();
+        });
+
+        renderList();
+        renderDetails();
+    </script>
+</body>
+
+</html>
