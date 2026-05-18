@@ -183,7 +183,7 @@
             filteredData.forEach(camp => {
                 const isSelected = activeCamp === camp;
 
-                const badgeText = camp.stealth ? 'Stealth' : 'Non-stealth';
+                const badgeText = camp.stealth ? 'Stealth' : 'Non-Stealth';
                 const badgeStyle = camp.stealth
                     ? 'bg-zinc-500 text-white border border-zinc-500 dark:bg-zinc-600 dark:border-zinc-500'
                     : 'bg-zinc-200 text-zinc-600 border border-zinc-400 dark:bg-zinc-700 dark:text-zinc-300 dark:border-zinc-600';
@@ -223,7 +223,7 @@
             document.getElementById('detail-description').innerText = activeCamp.description;
 
             const badge = document.getElementById('detail-badge');
-            badge.innerText = activeCamp.stealth ? 'Stealth' : 'Non-stealth';
+            badge.innerText = activeCamp.stealth ? 'Stealth' : 'Non-Stealth';
             badge.className = activeCamp.stealth
                 ? 'px-2 py-1 text-sm font-bold text-white bg-zinc-500 dark:bg-zinc-600'
                 : 'px-2 py-1 text-sm font-bold text-zinc-600 bg-zinc-200 border border-zinc-400 dark:text-zinc-300 dark:bg-zinc-700 dark:border-zinc-600';
