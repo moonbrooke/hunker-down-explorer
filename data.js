@@ -299,4 +299,14 @@ const campData = [
         "city": "Hinton, AB",
         "note": ""
     },
+    {
+        "title": "DIY Bike Trailer Camping",
+        "url": "https://www.youtube.com/watch?v=3c8c9QEM8AY",
+        "description": "My friends and I built a tiny camper that can be pulled by an e-bike and I took it out camping. The total build weighs approximately 160 pounds and I pulled it with an off the shelf 250 watt bike. Many improvements to come but this was a first test camping trip for it.",
+        "stealth": false,
+        "date": "2024/05/17",
+        "location": "53.5662296414073, -114.4563124446957",
+        "city": "Wabamun, AB",
+        "note": "This is the campground he's staying at."
+    },
 ];
