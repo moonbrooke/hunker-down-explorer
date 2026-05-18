@@ -128,8 +128,8 @@
                         class="text-zinc-600 dark:text-zinc-300 mb-auto text-base font-medium leading-relaxed">
                     </p>
 
-                    <p id="detail-note"
-                        class="text-zinc-400 dark:text-zinc-500 mb-auto text-base font-medium leading-relaxed mt-2">
+                    <p class="font-bold mt-2">Developer Note:</p>
+                    <p id="detail-note" class="text-amber-600 mb-auto text-base font-medium leading-relaxed">
                     </p>
 
                     <div class="flex flex-wrap flex-row justify-between items-center mt-6 gap-4">
@@ -296,10 +296,11 @@
             document.getElementById('detail-description').innerText = activeCamp.description;
             const noteElement = document.getElementById('detail-note');
             if (activeCamp.note && activeCamp.note.trim() !== "") {
-                noteElement.innerText = "⚠️ " + activeCamp.note;
+                noteElement.innerText = activeCamp.note;
                 noteElement.style.display = "block";
             } else {
-                noteElement.style.display = "none";
+                noteElement.innerText = "None.";
+                noteElement.style.display = "block";
             }
 
             const badge = document.getElementById('detail-badge');
