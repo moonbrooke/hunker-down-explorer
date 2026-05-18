@@ -1,3 +1,3 @@
 # hunker-down-explorer
 
-No JS frameworks needed.
+Credit: [alpinejs](https://alpinejs.dev/).
