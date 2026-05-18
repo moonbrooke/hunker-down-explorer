@@ -2,7 +2,7 @@
 
 **Last Updated:** May 18, 2026
 
-Hunker Down Explorer ("we," "us," or "our") is a fan-made, open-source project dedicated to cataloging  [Steve Wallis'](https://www.youtube.com/@campingwithsteve) camping locations. We respect your privacy and believe in keeping things simple. 
+Hunker Down Explorer ("we," "us," or "our") is a fan-made, open-source project dedicated to cataloging  [Steve Wallis's](https://www.youtube.com/@campingwithsteve) camping locations. We respect your privacy and believe in keeping things simple. 
 
 This Privacy Policy explains what data is (and isn't) collected when you visit our website.
 
