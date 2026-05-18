@@ -157,7 +157,7 @@ const campData = [
         "date": "2021/06/04",
         "location": "53.40944922318626, -117.56221154273317",
         "city": "Hinton, AB",
-        "note": "Not the precise spot, but close enough around here."
+        "note": "Might not be the exact spot, but it's around this area."
     },
     {
         "title": "Stealth Camping In Airport Parking Lot With SUV (Highly Patrolled)",
@@ -167,7 +167,7 @@ const campData = [
         "date": "2019/12/13",
         "location": "53.30896863642295, -113.5769102501329",
         "city": "Nisku, AB",
-        "note": "Not the precise spot, but close enough around here."
+        "note": "Might not be the exact spot, but it's around this area."
     },
     {
         "title": "2 Nights Camping In Highway Median",
@@ -177,7 +177,7 @@ const campData = [
         "date": "2026/04/20",
         "location": "49.128306576622926, -123.92944929324125",
         "city": "Nanaimo, BC",
-        "note": "Not the precise spot, but close enough around here."
+        "note": "Might not be the exact spot, but it's around this area."
     },
     {
         "title": "Small Town Stealth Camping",
@@ -187,7 +187,7 @@ const campData = [
         "date": "2022/06/10",
         "location": "53.5635944880847, -114.47955573996508",
         "city": "Wabamun, AB",
-        "note": "Not the precise spot, but close enough around here."
+        "note": "Might not be the exact spot, but it's around this area."
     },
     {
         "title": "Stealth Camping Beside Hiking Trail",
@@ -197,7 +197,7 @@ const campData = [
         "date": "2021/03/05",
         "location": "49.685589794559355, -112.86172232942731",
         "city": "Lethbridge, AB",
-        "note": "Not the precise spot, but close enough around here."
+        "note": "Might not be the exact spot, but it's around this area."
     },
     {
         "title": "Overnight In Remote Cabin",
@@ -217,7 +217,7 @@ const campData = [
         "date": "2019/09/06",
         "location": "53.52662313833788, -113.5567137022582",
         "city": "Edmonton, AB",
-        "note": "Not the precise spot, but close enough around here."
+        "note": "Might not be the exact spot, but it's around this area."
     },
     {
         "title": "Stealth Camping In Ducks Unlimited Conservation Area",
