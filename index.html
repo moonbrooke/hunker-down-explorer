@@ -31,9 +31,8 @@
                 }
             }
         }
-    </script>
 
-    <script>
+        // Theme
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -318,7 +317,7 @@
         function applyFilters() {
             const query = searchInput.value.toLowerCase();
 
-            filteredData = campData.filter(camp => {
+            let result = campData.filter(camp => {
                 if (currentFilter === 'stealth' && !camp.stealth) return false;
                 if (currentFilter === 'non-stealth' && camp.stealth) return false;
 
@@ -334,7 +333,22 @@
                 return true;
             });
 
-            applySort(filteredData);
+            result.sort((a, b) => {
+                let valA, valB;
+                if (currentSortBy === 'date') {
+                    valA = a.date;
+                    valB = b.date;
+                } else {
+                    valA = a.title.toLowerCase();
+                    valB = b.title.toLowerCase();
+                }
+
+                if (valA < valB) return currentSortDesc ? 1 : -1;
+                if (valA > valB) return currentSortDesc ? -1 : 1;
+                return 0;
+            });
+
+            filteredData = result;
 
             if (!filteredData.includes(activeCamp)) {
                 activeCamp = filteredData.length > 0 ? filteredData[0] : null;
