@@ -289,4 +289,14 @@ const campData = [
         "city": "Victoria, BC",
         "note": "This is the campground he's staying at."
     },
+    {
+        "title": "Stealth Camping Behind Billboard",
+        "url": "https://www.youtube.com/watch?v=RTt4O8q0acI",
+        "description": "Things finally fell into place and I found my dream stealth camping billboard. I've been searching for years and finally found the perfect one to camp behind. I made it back from the ill-fated trip to the coast, I only got half way there before the floods washed out all the highways connecting the interior to the coast. I will have to make another camping trip as soon as things are back to normal and roads are reopened.",
+        "stealth": true,
+        "date": "2021/12/03",
+        "location": "53.381570830370045, -117.62344186676476",
+        "city": "Hinton, AB",
+        "note": ""
+    },
 ];
