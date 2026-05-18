@@ -16,7 +16,7 @@ const campData = [
         "stealth": true,
         "date": "2020/10/02",
         "location": "53.0176608039331, -112.87689806170151",
-        "city": "Salmon River, NS",
+        "city": "Camrose, AB",
         "note": ""
     },
     {
