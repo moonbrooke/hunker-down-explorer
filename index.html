@@ -214,24 +214,6 @@
         const sortBySelect = document.getElementById('sort-by');
         const sortOrderBtn = document.getElementById('sort-order');
 
-        function applySort(dataArray) {
-            dataArray.sort((a, b) => {
-                let valA, valB;
-
-                if (currentSortBy === 'date') {
-                    valA = new Date(a.date);
-                    valB = new Date(b.date);
-                } else {
-                    valA = a.title.toLowerCase();
-                    valB = b.title.toLowerCase();
-                }
-
-                if (valA < valB) return currentSortDesc ? 1 : -1;
-                if (valA > valB) return currentSortDesc ? -1 : 1;
-                return 0;
-            });
-        }
-
         sortBySelect.addEventListener('change', (e) => {
             currentSortBy = e.target.value;
             applyFilters();
@@ -335,14 +317,8 @@
             });
 
             result.sort((a, b) => {
-                let valA, valB;
-                if (currentSortBy === 'date') {
-                    valA = a.date;
-                    valB = b.date;
-                } else {
-                    valA = a.title.toLowerCase();
-                    valB = b.title.toLowerCase();
-                }
+                let valA = currentSortBy === 'date' ? a.date : a.title.toLowerCase();
+                let valB = currentSortBy === 'date' ? b.date : b.title.toLowerCase();
 
                 if (valA < valB) return currentSortDesc ? 1 : -1;
                 if (valA > valB) return currentSortDesc ? -1 : 1;
