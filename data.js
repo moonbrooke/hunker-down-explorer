@@ -287,6 +287,6 @@ const campData = [
         "date": "2023/04/14",
         "location": "48.46205431611329, -123.5617658642171",
         "city": "Victoria, BC",
-        "note": ""
+        "note": "The campground he's staying at."
     },
 ];
