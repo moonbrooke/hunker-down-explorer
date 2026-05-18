@@ -75,9 +75,11 @@
             </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-6 flex-grow overflow-hidden">
+        <div class="flex flex-col md:flex-row gap-6 flex-grow items-stretch">
 
-            <div class="w-full md:w-1/3 flex flex-col gap-3 overflow-y-auto pr-2 pb-4 max-h-screen md:h-screen" id="camp-list">
+            <div class="w-full md:w-1/3 relative">
+                <div class="w-full flex flex-col gap-3 overflow-y-auto pr-2 pb-4 max-h-[50vh] md:max-h-none md:absolute md:inset-0" id="camp-list">
+                </div>
             </div>
 
             <div
@@ -89,7 +91,7 @@
                         allowfullscreen></iframe>
                 </div>
 
-                <div class="p-6 flex flex-col flex-grow overflow-y-auto">
+                <div class="p-6 flex flex-col flex-grow">
                     <div class="flex flex-wrap items-center gap-3 mb-2">
                         <span id="detail-badge"
                             class="px-2 py-1 text-sm font-bold text-white bg-zinc-500">Stealth</span>
