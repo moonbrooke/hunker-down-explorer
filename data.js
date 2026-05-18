@@ -309,4 +309,14 @@ const campData = [
         "city": "Wabamun, AB",
         "note": "This is the campground he's staying at."
     },
+    {
+        "title": "DIY E-Bike Stealth Camping",
+        "url": "https://www.youtube.com/watch?v=_QJbgUxNnRg",
+        "description": "I picked up an electric bike conversion kit on amazon and slapped it on an old mountain bike with a trailer to try it out for stealth camping. There was a little rain, a few mishaps, but a bad day camping is better than a good day at work. Big potential for stealth camping transportation to get into the camping spots I can't access with a vehicle.",
+        "stealth": true,
+        "date": "2022/06/24",
+        "location": "53.71490262483156, -114.65745564675949",
+        "city": "Silver Sands, AB",
+        "note": ""
+    },
 ];
