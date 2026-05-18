@@ -319,4 +319,14 @@ const campData = [
         "city": "Silver Sands, AB",
         "note": ""
     },
+    {
+        "title": "Camping On Abandoned Highway",
+        "url": "https://www.youtube.com/watch?v=S0EykVi_2e0",
+        "description": "I went camping with an e-bike to access an old stretch of #abandoned #highway. The highway was straightened and made wider to go around small towns and that left the perfect spot to sneak into camp. Defiantly an acceptable spot for a quick overnight camping trip on bike!",
+        "stealth": false,
+        "date": "2023/09/15",
+        "location": "44.16761697818376, -64.64252649645586",
+        "city": "Charleston, NS",
+        "note": "Might not be the exact spot, but it's around this area."
+    },
 ];
