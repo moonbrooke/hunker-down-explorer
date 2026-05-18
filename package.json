@@ -1,0 +1,24 @@
+{
+    "name": "hunker-down-explorer",
+    "version": "1.0.0",
+    "description": "Explore Steve Wallis's hunker down spots",
+    "homepage": "https://github.com/moonbrooke/hunker-down-explorer#readme",
+    "bugs": {
+        "url": "https://github.com/moonbrooke/hunker-down-explorer/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/moonbrooke/hunker-down-explorer.git"
+    },
+    "license": "MIT",
+    "author": "moonbrooke",
+    "type": "commonjs",
+    "main": "data.js",
+    "scripts": {
+        "dev": "tailwindcss -i ./src/input.css -o ./style.css --watch",
+        "build": "tailwindcss -i ./src/input.css -o ./style.css --minify"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.19"
+    }
+}

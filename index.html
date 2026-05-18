@@ -6,34 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunker Down Explorer</title>
     <link rel="icon" href="https://fav.farm/🏕️" />
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="./style.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Roboto Condensed"', 'sans-serif'],
-                    },
-                    colors: {
-                        zinc: {
-                            50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
-                            400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
-                            800: '#27272a', 900: '#18181b'
-                        }
-                    }
-                }
-            }
-        }
-
-        // Theme FOUC fic
+        // Theme FOUC fix
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
