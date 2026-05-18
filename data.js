@@ -329,4 +329,14 @@ const campData = [
         "city": "Charleston, NS",
         "note": "Might not be the exact spot, but it's around this area."
     },
+    {
+        "title": "Secret Seaside Cabin Overnight",
+        "url": "https://www.youtube.com/watch?v=o0csl_J6IUU",
+        "description": "I was lucky enough to hear about this secret cabin from Way of the Roads, you can check out their Channel here: @wayoftheroads. It took a total of 8 hours of driving, much of it on remote mountain logging roads, then a final hike out to the most remote secret cabin I've ever seen. It was a cozy night with a wood stove, waves crashing on the beach and some delicious food.",
+        "stealth": true,
+        "date": "2023/12/08",
+        "location": "50.60218093483054, -128.26989516087798",
+        "city": "Mount Waddington B, BC",
+        "note": "Might not be the exact spot, but it's around this area."
+    },
 ];
