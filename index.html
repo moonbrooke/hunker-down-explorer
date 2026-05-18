@@ -309,8 +309,7 @@
             document.getElementById('detail-city').innerHTML = `📍 ${activeCamp.city}`;
             document.getElementById('detail-date').innerHTML = `🗓️ ${activeCamp.date}`;
             document.getElementById('detail-video').href = activeCamp.url;
-
-            document.getElementById('detail-map').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activeCamp.location)}`;
+            document.getElementById('detail-map').href = `https://maps.google.com/maps?q=${encodeURIComponent(activeCamp.location)}`;
         }
 
         function applyFilters() {
