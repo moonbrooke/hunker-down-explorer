@@ -279,4 +279,14 @@ const campData = [
         "city": "Edmundston, NB",
         "note": ""
     },
+    {
+        "title": "Luxury U-Haul Camping",
+        "url": "https://www.youtube.com/watch?v=vqU7-ZEbpiE",
+        "description": "The perfect camping opportunity presented itself with a U-Haul rental depot directly across from a campground! It just took a quick trip to Canadian Tire and a thrift store to get the van ready for camping and I was all set. It turned out to be a surprisingly appropriate vehicle to camp in for the night!",
+        "stealth": false,
+        "date": "2023/04/14",
+        "location": "48.46205431611329, -123.5617658642171",
+        "city": "Victoria, BC",
+        "note": ""
+    },
 ];
