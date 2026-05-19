@@ -339,4 +339,14 @@ const campData = [
         "city": "Mount Waddington B, BC",
         "note": "Might not be the exact spot, but it's around this area."
     },
+    {
+        "title": "Camping In Abandoned Cold War Nuclear Bunker",
+        "url": "https://www.youtube.com/watch?v=RNGgcrYsgo0",
+        "description": "For this week's camping trip we took a drive down to the Heart Creek Bunker near Canmore Alberta. This was a Cold War-era bunker built around 1969. It was built by a private company planning to store documents in case of a nuclear attack. It was never fully completed and remains not far off the Trans Canada Trail. It was a great place to camp for the night without needing to bring a shelter.",
+        "stealth": true,
+        "date": "2022/01/17",
+        "location": "51.04648771987874, -115.18832749186282",
+        "city": "Canmore, AB",
+        "note": ""
+    },
 ];
