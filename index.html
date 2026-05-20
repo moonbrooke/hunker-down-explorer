@@ -25,6 +25,12 @@
             document.documentElement.classList.remove('dark');
         }
     </script>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body x-data="hunkerApp"
@@ -40,14 +46,12 @@
             <button @click="toggleTheme()"
                 class="p-2 mt-1 rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors focus:outline-none shrink-0"
                 aria-label="Toggle Theme">
-                <svg x-show="!isDark" style="display: none;" class="w-6 h-6" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
+                <svg x-show="!isDark" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
                     </path>
                 </svg>
-                <svg x-show="isDark" style="display: none;" class="w-6 h-6" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
+                <svg x-show="isDark" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
                     </path>
@@ -149,7 +153,7 @@
                                 </a>
                                 <div
                                     class="flex flex-wrap items-center gap-2 text-sm font-bold text-zinc-500 dark:text-zinc-400">
-                                    <a :href="`https://maps.google.com/maps?q=${encodeURIComponent(activeCamp.location)}`"
+                                    <a :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activeCamp.location)}`"
                                         target="_blank"
                                         class="text-blue-500 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300 transition">
                                         Check on Google Maps
@@ -160,6 +164,16 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </template>
+
+                <template x-if="!activeCamp">
+                    <div
+                        class="flex flex-col items-center justify-center flex-grow p-12 text-center text-zinc-400 dark:text-zinc-500">
+                        <span class="text-4xl mb-3">🏕️</span>
+                        <p class="font-bold uppercase tracking-wider text-sm">No Location Selected</p>
+                        <p class="text-xs mt-1">Please select an adventure from the list or clear your search filters.
+                        </p>
                     </div>
                 </template>
             </div>
