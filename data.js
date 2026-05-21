@@ -349,4 +349,14 @@ const campData = [
         "city": "Canmore, AB",
         "note": ""
     },
+    {
+        "title": "No Shelter Thunder Storm Stealth Camping",
+        "url": "https://www.youtube.com/watch?v=dhHyftzgrGY",
+        "description": "Things didn't quite go to plan on this trip, the weather forecast was severely off! I planned a nice relaxing simple stealth camping trip in the city. The forecast for my camping night called for just a few sprinkles and then a quiet but cold night. The skies opened up at about 10 and the hail and thunder began. The night was an adventure, I got soaked, but it was a blast.",
+        "stealth": true,
+        "date": "2021/09/20",
+        "location": "53.40382399580919, -113.5418002302112",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
