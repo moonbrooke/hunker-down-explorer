@@ -359,4 +359,14 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "Rest Area Tailgate Camping",
+        "url": "https://www.youtube.com/watch?v=jAy8N3ilRmg",
+        "description": "I went looking for a unique place to camp and the best I found was a highway rest area. Simple but effective overnighter, the tarp 'tent' on the back of the SUV added much-needed room to a small space.",
+        "stealth": false,
+        "date": "2022/07/15",
+        "location": "53.239008882449774, -117.79479444975067",
+        "city": "Brule, AB",
+        "note": ""
+    },
 ];
