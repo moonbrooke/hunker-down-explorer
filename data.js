@@ -369,4 +369,14 @@ const campData = [
         "city": "Brule, AB",
         "note": ""
     },
+    {
+        "title": "Coffee Shop Stealth Camping",
+        "url": "https://www.youtube.com/watch?v=GR1ob5Gt_6w",
+        "description": "I crawled behind a Tim Hortons drive-thru for an action-filled night of camping without being caught. Fantastic camping place out of view from the restaurant and drive-thru! A storm blew through but I was cozy in my camping hammock. A delicious meal and lots of hunkering down were had.",
+        "stealth": true,
+        "date": "2025/10/24",
+        "location": "43.77744108479217, -65.34080100960671",
+        "city": "Shelburne, NS",
+        "note": ""
+    },
 ];
