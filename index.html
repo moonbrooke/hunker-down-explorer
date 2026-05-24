@@ -96,7 +96,7 @@
                     <template x-if="filteredCamps.length === 0">
                         <p class="text-zinc-500 dark:text-zinc-400 font-bold p-4">No results found.</p>
                     </template>
-                    <template x-for="camp in filteredCamps" :key="camp.url">
+                    <template x-for="camp in filteredCamps" :key="camp.video_id">
                         <div @click="activeCamp = camp"
                             :class="activeCamp === camp ? 'bg-zinc-400 dark:bg-zinc-600 border-zinc-900 dark:border-zinc-400' : 'bg-white dark:bg-zinc-800 border-zinc-900 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-700'"
                             class="p-4 border-2 cursor-pointer transition-colors flex flex-col shrink-0">
@@ -138,8 +138,8 @@
                             <div class="flex flex-col sm:flex-row gap-6 mt-4 flex-grow items-start">
                                 
                                 <div class="w-full sm:w-1/3 md:w-1/4 aspect-square shrink-0 border-2 border-zinc-900 dark:border-zinc-600 bg-zinc-100 dark:bg-zinc-700 overflow-hidden">
-                                    <a :href="`https://www.youtube.com/watch?v=${activeCamp.url}`" target="_blank" class="hover:opacity-70 transition">
-                                        <img :src="activeCamp.url ? `https://img.youtube.com/vi/${activeCamp.url}/mqdefault.jpg` : `https://picsum.photos/seed/${encodeURIComponent(activeCamp.title)}/300`"
+                                    <a :href="`https://www.youtube.com/watch?v=${activeCamp.video_id}`" target="_blank" class="hover:opacity-70 transition">
+                                        <img :src="activeCamp.video_id ? `https://img.youtube.com/vi/${activeCamp.video_id}/mqdefault.jpg` : `https://picsum.photos/seed/${encodeURIComponent(activeCamp.title)}/300`"
                                             alt="activeCamp.title"
                                             class="w-full h-full object-cover" />
                                     </a>
@@ -162,7 +162,7 @@
                             </div>
 
                             <div class="flex flex-wrap flex-row justify-between items-center gap-4 pt-4">
-                                <a :href="`https://www.youtube.com/watch?v=${activeCamp.url}`" target="_blank"
+                                <a :href="`https://www.youtube.com/watch?v=${activeCamp.video_id}`" target="_blank"
                                     class="px-6 py-2 bg-red-600 text-white font-bold text-sm tracking-wide hover:bg-red-700 transition whitespace-nowrap">
                                     WATCH ON YOUTUBE
                                 </a>

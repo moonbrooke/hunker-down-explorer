@@ -1,7 +1,7 @@
 const campData = [
     {
         "title": "Hammock Camping Under Bridge",
-        "url": "AWMHmASqivM",
+        "video_id": "AWMHmASqivM",
         "description": "I had an amazing camping trip! I secretly set up a #hammock under a bridge on a remote road. There was a store close by selling step 2's and a variety of grocery items I used to form a #campingmeal. I slept pretty well, aside from some occasional road noise.",
         "stealth": true,
         "date": "2023/09/22",
@@ -11,7 +11,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping Behind Sign",
-        "url": "lblyg-NOVjE",
+        "video_id": "lblyg-NOVjE",
         "description": "This was one for the ages! I finally got out to go camping behind a sign. It took quite a while to find the perfect sign, but it was worth it! There was no view from the highway eastbound lanes and very minimal exposure on the westbound lanes. Basic backpack and general gear. I had a hammock, to use as a bivvy in case of rain, but the weather was pretty good.",
         "stealth": true,
         "date": "2020/10/02",
@@ -21,7 +21,7 @@ const campData = [
     },
     {
         "title": "Police Station Stealth Camping In Hammock",
-        "url": "yMIA6zdUVCA",
+        "video_id": "yMIA6zdUVCA",
         "description": "Well, I finally found my dream police station to camp behind. That was a strange sentence. When we traveled through after buying the school bus beautiful wife noticed a fantastic spot behind the police station. I gathered up my courage and my camping gear and headed into the woods there for a great stealth camping adventure in small-town Alberta.",
         "stealth": true,
         "date": "2021/09/06",
@@ -31,7 +31,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping Beside Fire Station",
-        "url": "OeUXopzBOBc",
+        "video_id": "OeUXopzBOBc",
         "description": "I brought out my small camo tent and snuck into the woods beside a small fire hall to camp for the night. It was an interesting #camping location with some excitement throughout the night. It was a bit noisy, but it was much better than camping under a bridge. #Hunkerdown!",
         "stealth": true,
         "date": "2023/12/01",
@@ -41,7 +41,7 @@ const campData = [
     },
     {
         "title": "Welcome Sign Stealth Camping",
-        "url": "dQ9eImcE9cA",
+        "video_id": "dQ9eImcE9cA",
         "description": "I went stealth camping in a small plot of trees behind a welcome sign. I've been trying to camp behind this sign for quite some time and finally, the timing and weather worked out for me! Was a decent night, road noise is expected of course but it made for an interesting night!",
         "stealth": true,
         "date": "2023/04/28",
@@ -51,7 +51,7 @@ const campData = [
     },
     {
         "title": "Parking Garage Stealth Camping",
-        "url": "hBnlPd__Vg0",
+        "video_id": "hBnlPd__Vg0",
         "description": "I camped for the night hidden in my SUV in a parking garage, or parkade depending on what you call them. I needed to apply for my passport and the lines are notoriously long unless you're there first thing in the morning. Let's be honest, first thing in the morning is not my friend so I decided to camp out to be there bright and early. The garage was quite hot, but the camping was nice and stealthy.",
         "stealth": true,
         "date": "2024/06/07",
@@ -61,7 +61,7 @@ const campData = [
     },
     {
         "title": "Disguised Truck Stealth Camping",
-        "url": "DYuAxGxH-8E",
+        "video_id": "DYuAxGxH-8E",
         "description": "A makeshift camper disguised as landscaping debris made a great little camping spot for the night. I camped out in a small town by a lake. The camper was just made with 4 pallets, 2 boards, 3 tarps, and some rachet straps. I crawled into the camper from the back of the truck and had a small mattress and some cooking equipment for a quick and easy meal.",
         "stealth": true,
         "date": "2024/08/16",
@@ -71,7 +71,7 @@ const campData = [
     },
     {
         "title": "Business Park Roundabout Stealth Camping",
-        "url": "UTDpgEraPbA",
+        "video_id": "UTDpgEraPbA",
         "description": "I found another roundabout to camp in!! These are always so fun, and I generally don't like to do the same idea twice but this was TOO tempting. Almost like it was a trap to catch me stealth camping. It was close by to a hotel I stayed at the night before, stones throw from a Cabelas and a Princess Auto. Made some pad Thai and hunkered down for the night on a beautiful autumn evening.",
         "stealth": true,
         "date": "2024/10/28",
@@ -81,7 +81,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping In Roundabout",
-        "url": "OPDvLaXuSHQ",
+        "video_id": "OPDvLaXuSHQ",
         "description": "I finally found the perfect roundabout to crawl into and go camping for the night. It was a very stealthy spot, and I've looked long and hard to find one like this. It was a typical night of hiding, drinking beer, and being quiet, but it was exciting as always. Overall a good camping trip, but I did find it a bit noisy of a night so likely wouldn't camp there again.",
         "stealth": true,
         "date": "2022/04/08",
@@ -91,7 +91,7 @@ const campData = [
     },
     {
         "title": "Urban Roadside Stealth Camping",
-        "url": "Lwgexah08cg",
+        "video_id": "Lwgexah08cg",
         "description": "Beautiful wife found the best sign to camp behind I've ever seen in my life. I headed out to camp behind the welcome to Nanaimo sign and set up my small bivy tent for a night of camping. It was a blast as always, and a very good camping test for the tent.",
         "stealth": true,
         "date": "2022/04/04",
@@ -101,7 +101,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping Beside Police Station In SUV",
-        "url": "cPiaf5wRaME",
+        "video_id": "cPiaf5wRaME",
         "description": "I've gotten a lot of requests to try this for a stealth camping trip, so I set up the back of the Hyundai for a stealther. I try out a Canadian MRE for dinner using a flameless ration heater, hunker down and zzz!",
         "stealth": true,
         "date": "2020/05/08",
@@ -111,7 +111,7 @@ const campData = [
     },
     {
         "title": "Small Airport Stealth Camping",
-        "url": "M8jQdzwjmN8",
+        "video_id": "M8jQdzwjmN8",
         "description": "I found a perfect camping spot in the woods beside the runway of a small airport. It was a stormy night with lots of wind and a bit of rain. I hammock camped in the trees and had a blast. Fortunately there was an airport lounge for me to warm up and dry off in for a bit before I hunkered down for the night. The wind became an issue for cooking so I had sleep for dinner that night.",
         "stealth": true,
         "date": "2025/03/14",
@@ -121,7 +121,7 @@ const campData = [
     },
     {
         "title": "Camper Disguised As Pallets",
-        "url": "QpO63kVjFb0",
+        "video_id": "QpO63kVjFb0",
         "description": "We put together a DIY camper on a trailer that looks like a bunch of pallets strapped down. It's all hollow on the inside and I set up a quick camper setup. I camped in for the night in a parking lot beside a strip mall and cooked up some good food. It was a little rainy, but rain makes for good camping sometimes!",
         "stealth": true,
         "date": "2025/05/23",
@@ -131,7 +131,7 @@ const campData = [
     },
     {
         "title": "Residential Stealth Car Camping In Snow",
-        "url": "qpaVu2_WK7s",
+        "video_id": "qpaVu2_WK7s",
         "description": "I got out to do a little bit of car camping during a heavy snowfall warning, it really took me back to the times I lived in a vehicle. Temperatures dropped to -14 Celsius, or 7f. I stayed fairly cozy through the night, but there were some cold moments.",
         "stealth": true,
         "date": "2020/11/20",
@@ -141,7 +141,7 @@ const campData = [
     },
     {
         "title": "Train Wreck Camping",
-        "url": "AUSWvSoQfZk",
+        "video_id": "AUSWvSoQfZk",
         "description": "A historic train wreck from the 1950's outside of Whistler B.C. was this week's target for some camping. Not sure if I needed to be stealthy or not, but it never hurts to keep a low profile. Set up camp in a boxcar and had an enjoyable camping adventure!",
         "stealth": true,
         "date": "2022/11/18",
@@ -151,7 +151,7 @@ const campData = [
     },
     {
         "title": "Camping By Main Rail Line Tracks",
-        "url": "GXPy7wgWHsM",
+        "video_id": "GXPy7wgWHsM",
         "description": "Well, not too crazy of a video for this week, we had a mouse invade our bus and we had to set up some traps and take a hotel break for a couple days. Fortunately, I noticed a trail heading right from the hotel to tracks with some ample room to camp! I went down to watch some trains for a bit then grabbed some pizza from town.",
         "stealth": true,
         "date": "2021/06/04",
@@ -161,7 +161,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping In Airport Parking Lot With SUV (Highly Patrolled)",
-        "url": "IH69tW3yF-4",
+        "video_id": "IH69tW3yF-4",
         "description": "Well, for this Thursdays video I did something a little bit different than normal, I ended up heading down to the long term parking at the Edmonton International Airport for a quick stealth camp in the back of the SUV. Idea courtesy of Beautiful Wife! Some very close calls with security sniffing around the car! All in all, another fun night despite having a cold.",
         "stealth": true,
         "date": "2019/12/13",
@@ -171,7 +171,7 @@ const campData = [
     },
     {
         "title": "2 Nights Camping In Highway Median",
-        "url": "IzZ6MPxbR-A",
+        "video_id": "IzZ6MPxbR-A",
         "description": "I went out stealth camping in a highway median using a hunting blind for a shelter. It was a short walk from town through a rough trail and the town had all the camping supplies I could require for the trip. There was a little rain, a lot of traffic, and as always some good old fashioned camping with the usual awful food I cook.",
         "stealth": true,
         "date": "2026/04/20",
@@ -181,7 +181,7 @@ const campData = [
     },
     {
         "title": "Small Town Stealth Camping",
-        "url": "BW4zJSxFNto",
+        "video_id": "BW4zJSxFNto",
         "description": "Well, technically a hamlet, it used to be a village, but perfect for stealth camping. I packed my hammock to a great camp spot behind a ball diamond. Little towns are an excellent opportunity for stealth camping, there aren't the crowds of the big city, but there is the possibility locals will be more vigilant regarding people they don't recognize.",
         "stealth": true,
         "date": "2022/06/10",
@@ -191,7 +191,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping Beside Hiking Trail",
-        "url": "Qhf88k9MRZM",
+        "video_id": "Qhf88k9MRZM",
         "description": "This video is kind of boring, but you never know how the videos will go. We are on a road trip taking the stealth camping to different places around Alberta. We came to Lethbridge for the weather, but it was a difficult city to find any cover for a stealther. I camped under the stars beside a hiking trail with some new gear that turned out to be a little on the cold side.",
         "stealth": true,
         "date": "2021/03/05",
@@ -201,7 +201,7 @@ const campData = [
     },
     {
         "title": "Overnight In Remote Cabin",
-        "url": "j_uGrUp9ydM",
+        "video_id": "j_uGrUp9ydM",
         "description": "I went 'camping' up a winding mountain road in an #oldcabin. It was available to use on a first-come first-served basis. An amazing little lake and 2 little campsites were just perfect for me for the night. Mosquitoes were horrible, but in the #remotecabin was cozy and mosquito free for most of the night.",
         "stealth": false,
         "date": "2023/06/23",
@@ -211,7 +211,7 @@ const campData = [
     },
     {
         "title": "Kayak Urban Stealth Camping On The River",
-        "url": "FQZdbA-ikYQ",
+        "video_id": "FQZdbA-ikYQ",
         "description": "Well, here we are again with another stealth camping video. A lot of new subscribers since the last video had asked for a bit more stealth camping. I got a $100 inflatable kayak from Walmart and put it to the test in the river. I found a good spot only accessible via the river! More to come in the future.",
         "stealth": true,
         "date": "2019/09/06",
@@ -221,7 +221,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping In Ducks Unlimited Conservation Area",
-        "url": "8I0Il4Y78X8",
+        "video_id": "8I0Il4Y78X8",
         "description": "Well, here we are again. I found a great stealth camping spot with questionable legality. It was a Ducks Unlimited easement shelter for bird watching on a lonely country road. There were no signs prohibiting camping, so I figured I should camp there! Of course, there was the normal trouble, things not going to plan, snow began to fall.",
         "stealth": true,
         "date": "2021/03/25",
@@ -231,7 +231,7 @@ const campData = [
     },
     {
         "title": "Heat Wave Yurt Glamping",
-        "url": "n4515H2vaOE",
+        "video_id": "n4515H2vaOE",
         "description": "I am in the US for a month having the adventure of my life. The only way to stay cool and go 'camping' in Georgia was to rent an air conditioned Yurt. It was my first time in a Yurt and I put together a little video to show what that whole thing is all about. The state parks here rent these out and they come equipped with some basic stuff (beds, seating, lights). Bring your own bedding, food, and cooking supplies.",
         "stealth": false,
         "date": "2024/07/12",
@@ -241,7 +241,7 @@ const campData = [
     },
     {
         "title": "Ferry Terminal Stealth Camping",
-        "url": "2A4o6mHXOr0",
+        "video_id": "2A4o6mHXOr0",
         "description": "I camped out for the night in the lineup at a BC Ferries terminal. It proved to be a good place to enjoy the evening with a food truck. If anyone is in Earls Cove please check out Sharon's Grill It (The food truck). I highly recommend it :) Decent camping adventure!",
         "stealth": true,
         "date": "2023/01/13",
@@ -251,7 +251,7 @@ const campData = [
     },
     {
         "title": "Camping In Secret Bridge Fort",
-        "url": "pc20TjmKiPw",
+        "video_id": "pc20TjmKiPw",
         "description": "I built a secret camping fort under a highway overpass bridge and camped out in it for the night. It all went fairly smoothly eventually. It took a couple weeks to get the fort fully built and stocked but when it was done it was amazing. I color matched the paint of the bridge to paint the plywood to disguise my camping activities. We hauled up the fort, set it in place and had a very stealthy camping trip. No campsite required, earplugs optional.",
         "stealth": true,
         "date": "2025/11/24",
@@ -261,7 +261,7 @@ const campData = [
     },
     {
         "title": "Busy Intersection Stealth Camping",
-        "url": "My_eWYEOFmE",
+        "video_id": "My_eWYEOFmE",
         "description": "I crawled into some very sparse bushes beside a busy intersection for a night of stealth camping. Cooked up a quick and hearty dinner and tried to stay warm in temperatures around freezing. It was a fun camping adventure with many amenities nearby. Traffic was busy until quite late, and I packed up my camping gear early in the morning during rush hour.",
         "stealth": true,
         "date": "2025/01/24",
@@ -271,7 +271,7 @@ const campData = [
     },
     {
         "title": "Musician Disguise Stealth Camping",
-        "url": "8JngEMxTjJA",
+        "video_id": "8JngEMxTjJA",
         "description": "I went into the woods in town disguised as a musician for a little bit of good old-fashioned stealth camping. I put all my camping gear in a guitar case and donned the appropriate attire. It was a relaxing evening of camping, cooking, and exploring the nearby amenities. There were some laughs, some beers, and a cozy night curled up in my hammock with the traffic putting me to sleep.",
         "stealth": true,
         "date": "2025/09/19",
@@ -281,7 +281,7 @@ const campData = [
     },
     {
         "title": "Luxury U-Haul Camping",
-        "url": "vqU7-ZEbpiE",
+        "video_id": "vqU7-ZEbpiE",
         "description": "The perfect camping opportunity presented itself with a U-Haul rental depot directly across from a campground! It just took a quick trip to Canadian Tire and a thrift store to get the van ready for camping and I was all set. It turned out to be a surprisingly appropriate vehicle to camp in for the night!",
         "stealth": false,
         "date": "2023/04/14",
@@ -291,7 +291,7 @@ const campData = [
     },
     {
         "title": "Stealth Camping Behind Billboard",
-        "url": "RTt4O8q0acI",
+        "video_id": "RTt4O8q0acI",
         "description": "Things finally fell into place and I found my dream stealth camping billboard. I've been searching for years and finally found the perfect one to camp behind. I made it back from the ill-fated trip to the coast, I only got half way there before the floods washed out all the highways connecting the interior to the coast. I will have to make another camping trip as soon as things are back to normal and roads are reopened.",
         "stealth": true,
         "date": "2021/12/03",
@@ -301,7 +301,7 @@ const campData = [
     },
     {
         "title": "DIY Bike Trailer Camping",
-        "url": "3c8c9QEM8AY",
+        "video_id": "3c8c9QEM8AY",
         "description": "My friends and I built a tiny camper that can be pulled by an e-bike and I took it out camping. The total build weighs approximately 160 pounds and I pulled it with an off the shelf 250 watt bike. Many improvements to come but this was a first test camping trip for it.",
         "stealth": false,
         "date": "2024/05/17",
@@ -311,7 +311,7 @@ const campData = [
     },
     {
         "title": "DIY E-Bike Stealth Camping",
-        "url": "_QJbgUxNnRg",
+        "video_id": "_QJbgUxNnRg",
         "description": "I picked up an electric bike conversion kit on amazon and slapped it on an old mountain bike with a trailer to try it out for stealth camping. There was a little rain, a few mishaps, but a bad day camping is better than a good day at work. Big potential for stealth camping transportation to get into the camping spots I can't access with a vehicle.",
         "stealth": true,
         "date": "2022/06/24",
@@ -321,7 +321,7 @@ const campData = [
     },
     {
         "title": "Camping On Abandoned Highway",
-        "url": "S0EykVi_2e0",
+        "video_id": "S0EykVi_2e0",
         "description": "I went camping with an e-bike to access an old stretch of #abandoned #highway. The highway was straightened and made wider to go around small towns and that left the perfect spot to sneak into camp. Defiantly an acceptable spot for a quick overnight camping trip on bike!",
         "stealth": false,
         "date": "2023/09/15",
@@ -331,7 +331,7 @@ const campData = [
     },
     {
         "title": "Secret Seaside Cabin Overnight",
-        "url": "o0csl_J6IUU",
+        "video_id": "o0csl_J6IUU",
         "description": "I was lucky enough to hear about this secret cabin from Way of the Roads, you can check out their Channel here: @wayoftheroads. It took a total of 8 hours of driving, much of it on remote mountain logging roads, then a final hike out to the most remote secret cabin I've ever seen. It was a cozy night with a wood stove, waves crashing on the beach and some delicious food.",
         "stealth": true,
         "date": "2023/12/08",
@@ -341,7 +341,7 @@ const campData = [
     },
     {
         "title": "Camping In Abandoned Cold War Nuclear Bunker",
-        "url": "RNGgcrYsgo0",
+        "video_id": "RNGgcrYsgo0",
         "description": "For this week's camping trip we took a drive down to the Heart Creek Bunker near Canmore Alberta. This was a Cold War-era bunker built around 1969. It was built by a private company planning to store documents in case of a nuclear attack. It was never fully completed and remains not far off the Trans Canada Trail. It was a great place to camp for the night without needing to bring a shelter.",
         "stealth": true,
         "date": "2022/01/17",
@@ -351,7 +351,7 @@ const campData = [
     },
     {
         "title": "No Shelter Thunder Storm Stealth Camping",
-        "url": "dhHyftzgrGY",
+        "video_id": "dhHyftzgrGY",
         "description": "Things didn't quite go to plan on this trip, the weather forecast was severely off! I planned a nice relaxing simple stealth camping trip in the city. The forecast for my camping night called for just a few sprinkles and then a quiet but cold night. The skies opened up at about 10 and the hail and thunder began. The night was an adventure, I got soaked, but it was a blast.",
         "stealth": true,
         "date": "2021/09/20",
@@ -361,7 +361,7 @@ const campData = [
     },
     {
         "title": "Rest Area Tailgate Camping",
-        "url": "jAy8N3ilRmg",
+        "video_id": "jAy8N3ilRmg",
         "description": "I went looking for a unique place to camp and the best I found was a highway rest area. Simple but effective overnighter, the tarp 'tent' on the back of the SUV added much-needed room to a small space.",
         "stealth": false,
         "date": "2022/07/15",
@@ -371,7 +371,7 @@ const campData = [
     },
     {
         "title": "Coffee Shop Stealth Camping",
-        "url": "GR1ob5Gt_6w",
+        "video_id": "GR1ob5Gt_6w",
         "description": "I crawled behind a Tim Hortons drive-thru for an action-filled night of camping without being caught. Fantastic camping place out of view from the restaurant and drive-thru! A storm blew through but I was cozy in my camping hammock. A delicious meal and lots of hunkering down were had.",
         "stealth": true,
         "date": "2025/10/24",
@@ -381,7 +381,7 @@ const campData = [
     },
     {
         "title": "Blatant Stealth Camping Under Tree",
-        "url": "1NGa_Xt77xU",
+        "video_id": "1NGa_Xt77xU",
         "description": "I finally got back out to do a night of stealth camping in a very exposed spot. There was heavy traffic and very minimal cover, but I managed to camp underneath two trees for the night and remained hidden from view. It's still winter so it was a bit chilly, but sitting still really got me feeling cold. It was a fun trip nonetheless! Once I crawled into my sleeping bag it got quite warm and aside from the traffic noise and bumpy ground it was a great sleep!",
         "stealth": true,
         "date": "2024/02/23",

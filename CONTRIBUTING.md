@@ -26,7 +26,7 @@ To add a new or modify an existing location, open `data.js` and locate the array
 | Field | Type   | Description |
 | ----- | ------ | ----------- |
 | title | String | The title of the YouTube video. |
-| url   | String | The YouTube video ID only (e.g., if the video URL is `https://www.youtube.com/watch?v=lblyg-NOVjE`, the ID is `lblyg-NOVjE`). |
+| video_id   | String | The YouTube video ID only (e.g., if the video URL is `https://www.youtube.com/watch?v=lblyg-NOVjE`, the ID is `lblyg-NOVjE`). |
 | description | String | The text description from the YouTube video. |
 | stealth | Boolean | Set to `true` if it's a stealth camping episode or `false` if it's non-stealth camping episode. |
 | date | String | The date when the video is published. Format: `YYYY/MM/DD`. |
