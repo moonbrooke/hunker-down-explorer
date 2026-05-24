@@ -1,3 +1,44 @@
 # CONTRIBUTING
 
 If you'd like to contribute, feel free to submit a [pull request](https://github.com/moonbrooke/hunker-down-explorer/pulls) or, if you're unfamiliar with Git/GitHub, simply open a [new issue](https://github.com/moonbrooke/hunker-down-explorer/issues) detailing what you want fixed or added.
+
+## How to Add or Modify a Location
+
+To add a new camping spot or modify an existing one, Open the `data.js` file and locate the array or append a new JSON object to the bottom of the array using the following schema specification.
+
+### Data Schema Reference
+
+```js
+{
+    "title": "Blatant Stealth Camping Under Tree",
+    "url": "1NGa_Xt77xU",
+    "description": "I finally got back out to do a night of stealth...",
+    "stealth": true,
+    "date": "2024/02/23",
+    "location": "54.116700003649996, -115.64754529270392",
+    "city": "Whitecourt, AB",
+    "note": ""
+}
+```
+
+### Field Breakdown
+
+| Field | Type   | Description |
+| ----- | ------ | ----------- |
+| title | String | The title of the YouTube video |
+| url   | String | The YouTube video ID only (e.g., video URL = `https://www.youtube.com/watch?v=lblyg-NOVjE`, the ID is `lblyg-NOVjE`) |
+| description | String | The text description from the YouTube video |
+| stealth | Boolean | Set to `true` if it's a stealth camping episode or `false` if it's non-stealth camping episode. |
+| date | String | The date when the video is published. Format: `YYYY/MM/DD`. |
+| location | String | Latitude and longitude coordinate string comma-separated (e.g., `"54.116700003649996, -115.64754529270392"`). |
+| city | String | The city and state/province code (e.g., `"Camrose, AB"` or `"Salmon River, NS"`). |
+| note | String | Optional developer/contributor annotations or corrections regarding accuracy. Leave as `""` if not needed. |
+
+### Instructions
+
+1. **Verify coordinates**: Check your latitude and longitude coordinates on Google Maps before pasting them into location.
+2. **Format Cleanly**: Keep standard JSON quotes (") around keys and values except for the boolean field stealth.
+3. **Test locally**: Open `index.html` in your web browser. Filter, search, and select your added adventure to verify that:
+    - The sidebar entry displays nicely.
+    - The Google Maps iframe loads the embedded satellite perspective correctly.
+    - The square YouTube thumbnail works without errors.
