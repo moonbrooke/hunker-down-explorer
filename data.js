@@ -379,4 +379,14 @@ const campData = [
         "city": "Shelburne, NS",
         "note": ""
     },
+    {
+        "title": "Blatant Stealth Camping Under Tree",
+        "url": "https://www.youtube.com/watch?v=1NGa_Xt77xU",
+        "description": "I finally got back out to do a night of stealth camping in a very exposed spot. There was heavy traffic and very minimal cover, but I managed to camp underneath two trees for the night and remained hidden from view. It's still winter so it was a bit chilly, but sitting still really got me feeling cold. It was a fun trip nonetheless! Once I crawled into my sleeping bag it got quite warm and aside from the traffic noise and bumpy ground it was a great sleep!",
+        "stealth": true,
+        "date": "2024/02/23",
+        "location": "54.116700003649996, -115.64754529270392",
+        "city": "Whitecourt, AB",
+        "note": ""
+    },
 ];
