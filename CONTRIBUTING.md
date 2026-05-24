@@ -25,7 +25,7 @@ To add a new camping spot or modify an existing one, Open the `data.js` file and
 
 | Field | Type   | Description |
 | ----- | ------ | ----------- |
-| title | String | The title of the YouTube video |
+| title | String | The title of the YouTube video. |
 | url   | String | The YouTube video ID only (e.g., if the video URL is `https://www.youtube.com/watch?v=lblyg-NOVjE`, the ID is `lblyg-NOVjE`). |
 | description | String | The text description from the YouTube video. |
 | stealth | Boolean | Set to `true` if it's a stealth camping episode or `false` if it's non-stealth camping episode. |
