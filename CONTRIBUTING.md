@@ -38,7 +38,7 @@ To add a new or modify an existing location, open `data.js` and locate the array
 
 1. **Verify coordinates**: Check your latitude and longitude coordinates on Google Maps before pasting them into location.
 2. **Format Cleanly**: Keep standard JSON quotes (") around keys and values except for the boolean field stealth.
-3. **Test locally**: Open `index.html` in your web browser. Filter, search, and select your added adventure to verify that:
+3. **Test locally**: Open `index.html` in your web browser. Filter, search, and select your added camping location to verify that:
     - The sidebar entry displays nicely.
     - The Google Maps iframe loads the embedded satellite perspective correctly.
     - The square YouTube thumbnail works without errors.
