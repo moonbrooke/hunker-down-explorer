@@ -439,4 +439,14 @@ const campData = [
         "city": "Courtenay, BC",
         "note": ""
     },
+    {
+        "title": "Highway Scale Stealth Camping",
+        "video_id": "UvNlpeOsCpI",
+        "description": "I stealth camped at a commercial vehicle inspection station and weigh scale along the side of the highway. There was ample tree cover and plenty of spots to set up camp for the night. The camping was acceptable considering the location. As always it's not quite a camping trip without something going wrong.",
+        "stealth": true,
+        "date": "2023/02/24",
+        "location": "49.29604168712551, -124.25631421506235",
+        "city": "Parksville, BC",
+        "note": ""
+    },
 ];
