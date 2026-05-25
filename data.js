@@ -419,4 +419,14 @@ const campData = [
         "city": "Yarmouth, NS",
         "note": ""
     },
+    {
+        "title": "McDonalds Drive-Thru Stealth Camping",
+        "video_id": "GyVFg80Z2H8",
+        "description": "I stealth camped behind a #McDonalds drive through last night! I have been looking for a camping spot like this for years. I wanted to do a drive-thru but for some reason (probably safety) they seem to always be clear around with no hiding spots. After years of searching and looking at every Google satellite view, I could find I found my dream McDonalds #camping spot.",
+        "stealth": true,
+        "date": "2023/10/01",
+        "location": "46.50259609254467, -80.95810397634634",
+        "city": "Sudbury, ON",
+        "note": ""
+    },
 ];
