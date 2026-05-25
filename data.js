@@ -399,4 +399,14 @@ const campData = [
         "city": "Colwood, BC",
         "note": ""
     },
+    {
+        "title": "Simple Car Camping",
+        "video_id": "rm6jEH93RbM",
+        "description": "To make camping life easier on the road I've set up my car to have a half bunk in the back with a small table (shoe organizing rack) to use as a desk and table to put my laptop on. I have a 100 amp hour lithium iron phosphate battery to provide me with enough power to run a coffee maker and lighting. My bed is leveled out with some pine boards and shims so I can sleep level. The whole camping setup can be removed in minutes to return the car to normal.",
+        "stealth": false,
+        "date": "2024/01/19",
+        "location": "49.96563023441148, -125.58078124151291",
+        "city": "Quinsam, BC",
+        "note": "This is the campground he's staying at."
+    },
 ];
