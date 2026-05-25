@@ -429,4 +429,14 @@ const campData = [
         "city": "Sudbury, ON",
         "note": ""
     },
+    {
+        "title": "River Camping Under Highway Bridge",
+        "video_id": "fStFbNPqenU",
+        "description": "I found a great camping spot underneath a highway bridge. A beautiful river ran right beside the campsite and was the perfect place to hunker down and camp for the night. Some highway noise made it hit and miss overnight, but the white noise of the river made camping far more enjoyable than expected!",
+        "stealth": false,
+        "date": "2023/03/24",
+        "location": "49.67980646738036, -125.0653419814418",
+        "city": "Courtenay, BC",
+        "note": ""
+    },
 ];
