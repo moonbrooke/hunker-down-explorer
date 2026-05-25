@@ -409,4 +409,14 @@ const campData = [
         "city": "Quinsam, BC",
         "note": "This is the campground he's staying at."
     },
+    {
+        "title": "Donation Bin Stealth Camping",
+        "video_id": "frXdtNI3Ylg",
+        "description": "Rest In Peace Mom, This video is for you. It's been a tough month and a half, but it feels good to get back out and do some camping. For my return video I've found a bank of clothing donation bins that turned out to be the perfect place for a little #stealthcamping. I'm still in #NovaScotia for a bit longer and will be getting much, much more camping done. Stay tuned my friends!",
+        "stealth": true,
+        "date": "2023/09/08",
+        "location": "43.84579416439893, -66.11117018169583",
+        "city": "Yarmouth, NS",
+        "note": ""
+    },
 ];
