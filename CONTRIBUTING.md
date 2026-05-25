@@ -11,7 +11,7 @@ To add a new or modify an existing location, open `data.js` and locate the array
 ```js
 {
     "title": "Blatant Stealth Camping Under Tree",
-    "url": "1NGa_Xt77xU",
+    "video_id": "1NGa_Xt77xU",
     "description": "I finally got back out to do a night of stealth...",
     "stealth": true,
     "date": "2024/02/23",
