@@ -389,4 +389,14 @@ const campData = [
         "city": "Whitecourt, AB",
         "note": ""
     },
+    {
+        "title": "Dump Truck Stealth Camping",
+        "video_id": "2vQazcz-opg",
+        "description": "I got my hands on a dump truck for the night and crawled in the back for some camping. I set up a tarp and my sleeping bag in the back of the truck and brought security cameras to keep an eye on things outside. There was a beautiful view and a wonderful sky full of stars to camp under. Who needs a campsite when you can just crawl into a dump truck!",
+        "stealth": true,
+        "date": "2025/01/31",
+        "location": "48.41262975595661, -123.48363671430937",
+        "city": "Colwood, BC",
+        "note": ""
+    },
 ];
