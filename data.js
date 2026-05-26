@@ -499,4 +499,14 @@ const campData = [
         "city": "Langford, BC",
         "note": ""
     },
+    {
+        "title": "Hotel Parking Lot Stealth Camping",
+        "video_id": "R8AW3FNJDtQ",
+        "description": "I borrowed crazy neighbors Suburban to do urban stealth camping in the parking lot of the Courtyard Marriott Hotel. I blacked out the windows with landscaping fabric to camp for the night. I hunkered down after a quick parking lot picnic of grilled cheese sandwiches and tomato soup! Was an absolute blast.",
+        "stealth": true,
+        "date": "2021/11/12",
+        "location": "53.53831308097059, -113.63856363739097",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
