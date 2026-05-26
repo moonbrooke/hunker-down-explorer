@@ -509,4 +509,14 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "Urban Stealth Camping Behind Warehouse",
+        "video_id": "LCENMi57vwQ",
+        "description": "I found a beautiful camping spot in a thin strip of trees between a warehouse and a rail line. This week I camped with my hammock because the trees were spaced perfectly and there was lots of open room. The warehouse was mostly vacant and for lease so there was very little traffic in the area. I whipped up some pulled pork sandwiches for dinner and hunkered down for a very cozy, albeit noisy sleep.",
+        "stealth": true,
+        "date": "2021/08/20",
+        "location": "53.568901802630506, -113.64350424825352",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
