@@ -449,4 +449,14 @@ const campData = [
         "city": "Parksville, BC",
         "note": ""
     },
+    {
+        "title": "Abandoned Rail Stealth Camping",
+        "video_id": "Wh4uUodS40E",
+        "description": "I headed down an abandoned #rail line for some stealth camping. I hoped to find a nice little spot along the tracks and fortune was on my side. Perhaps a bit too stealthy of a #camping spot as I would say there was about a 0% chance of anyone finding me. Perhaps not a nail-biting night, but any night outdoors is always good.",
+        "stealth": true,
+        "date": "2023/05/05",
+        "location": "48.97244637758702, -123.79434137229637",
+        "city": "Ladysmith, BC",
+        "note": ""
+    },
 ];
