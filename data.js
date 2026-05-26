@@ -469,4 +469,14 @@ const campData = [
         "city": "Carway, AB",
         "note": ""
     },
+    {
+        "title": "Camping On My Old Beach 'Home'",
+        "video_id": "cBGdc2-G_6I",
+        "description": "I got back to do a night of camping at the place I lived for years. The campground was kind of abandoned for a year or so and I parked my RV there for ages for free. Some of this adventure was filmed for an old Boondocking documentary I filmed. Truly a beautiful campground and my favorite place on earth.",
+        "stealth": false,
+        "date": "2022/04/29",
+        "location": "48.42095706311002, -124.05389622401879",
+        "city": "Jordan River, BC",
+        "note": ""
+    },
 ];
