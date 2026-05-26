@@ -479,4 +479,14 @@ const campData = [
         "city": "Jordan River, BC",
         "note": ""
     },
+    {
+        "title": "Abandoned Power Plant Stealth Camping",
+        "video_id": "jnJLkyyfR9Q",
+        "description": "This old hydroelectric generating station made a perfect camping spot for the night. Crazy Neighbor came out with me for this trip and it was great to have company. It was a little rainy but most of the power plant was dry enough to camp comfortably.",
+        "stealth": true,
+        "date": "2022/11/04",
+        "location": "48.423582508268595, -124.04843770863393",
+        "city": "Jordan River, BC",
+        "note": ""
+    },
 ];
