@@ -489,4 +489,14 @@ const campData = [
         "city": "Jordan River, BC",
         "note": ""
     },
+    {
+        "title": "Urban Island Stealth Camping",
+        "video_id": "y3DV8_s7lo8",
+        "description": "I picked up a cheap inflatable raft and paddled over to an island in the middle of a lake in a residential area for some camping. Many very nice homes were close by, so I had to be stealthy. I brought a couple of stealth camping shelter options with me but ended up using a surprise shelter instead. It was a blast as always!",
+        "stealth": true,
+        "date": "2022/04/22",
+        "location": "48.45071768378323, -123.53305892287655",
+        "city": "Langford, BC",
+        "note": ""
+    },
 ];
