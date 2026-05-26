@@ -227,7 +227,7 @@ const campData = [
         "date": "2021/03/25",
         "location": "49.478354252499564, -111.44743950571137",
         "city": "Foremost, AB",
-        "note": "This is the motel where Steve and his wife stay."
+        "note": "This is the motel shown in the intro where Steve and his wife stay."
     },
     {
         "title": "Heat Wave Yurt Glamping",
