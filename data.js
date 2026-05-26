@@ -459,4 +459,14 @@ const campData = [
         "city": "Ladysmith, BC",
         "note": ""
     },
+    {
+        "title": "Camping On Canada-U.S. Border",
+        "video_id": "AaNgdIbCRe0",
+        "description": "To celebrate 1 Million subscribers I went out to camp on the Canada/U.S. border with Crazy Neighbor. There was a trail going right to the border from the campground and plenty of stealthy camping spots around the border. We ended up getting a little more extreme than originally planned.",
+        "stealth": true,
+        "date": "2022/08/19",
+        "location": "48.99800183153532, -113.46080357982258",
+        "city": "Carway, AB",
+        "note": ""
+    },
 ];
