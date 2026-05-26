@@ -21,7 +21,7 @@ While we don't collect your data, our site relies on a few third-party services 
 These services include:
 * **Google Maps:** We embed map iframes to show camping locations. Interacting with these maps is subject to Google's [Privacy Policy](https://policies.google.com/privacy).
 * **Google Fonts:** We use Google Fonts to style our text. 
-* **Tailwind CSS & Fav.farm:** We use Content Delivery Networks (CDNs) to load our CSS framework and site icon.
+* **Fav.farm:** We use Content Delivery Networks (CDNs) to load our site icon.
 
 ### 4. External Links
 Our site contains links to external websites, specifically YouTube and GitHub. If you click on a link to a third-party site, you will be directed to that site. Note that these external sites are not operated by us, and we strongly advise you to review their specific Privacy Policies.
