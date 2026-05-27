@@ -4,13 +4,26 @@ If you'd like to contribute, feel free to submit a [pull request](https://github
 
 ## Creating a New Issue
 
-- Before creating a new issue, please search to ensure it doesn't already exist.
-- Write down the details of your issue in the description.
-- If the issue is related to adding or modifying a location, it should include:
-    - Include the YouTube video title in the issue title.
-    - The latitude and longitude coordinates of the location (e.g., `54.116700003649996, -115.64754529270392`).
-    - Proof that this is the correct location, such as Street View images, screenshots, coordinates, etc.
-    - It doesn't always need to be 100% accurate, some videos just don't have enough information to pinpoint the exact location.
+Thank you for helping improve the project! Please follow these guidelines before creating a new issue.
+
+### 1. Check for Existing Issues
+Before creating a new issue, please **search the existing open and closed issues** to make sure someone else hasn't already reported it or suggested the same change.
+
+### 2. Provide a Clear Description
+Clearly explain the details of the problem or suggestion in the description field. The more context you provide, the better.
+
+### 3. Location Submissions (Additions or Modifications)
+If your issue involves adding a new location or modifying an existing one, please ensure it includes the following specific details:
+
+* **Issue Title:** Include the **YouTube video title** in the title of your issue.
+* **Coordinates:** Provide the latitude and longitude of the location. 
+    > *Example:* `54.116700003649996, -115.64754529270392`
+* **Supporting Proof:** Include evidence that verifies this is the correct location. This can include:
+    * Google Street View links or screenshots.
+    * Video timestamps or frames.
+    * Any other matching geographical or visual reference data.
+
+> 💡 **Note on Accuracy:** Don't worry if you can't pin down the exact square inch. Some videos simply don't provide enough visual context for perfect precision, **best guesses and close approximations are completely welcome!**
 
 ## How to Add or Modify a Location
 
@@ -44,7 +57,7 @@ To add a new or modify an existing location, open `data.js` and locate the array
 | city | String | The city and state/province code (e.g., `"Camrose, AB"` or `"Salmon River, NS"`). |
 | note | String | Optional developer/contributor annotations or corrections regarding accuracy. Leave as `""` if not needed. |
 
-### Instructions
+### Instructions before Submitting the Pull Request
 
 1. **Verify coordinates**: Check your latitude and longitude coordinates on Google Maps before pasting them into location.
 2. **Format Cleanly**: Keep standard JSON quotes (") around keys and values except for the boolean field stealth.
