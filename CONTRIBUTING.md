@@ -5,9 +5,9 @@ If you'd like to contribute, feel free to submit a [pull request](https://github
 ## Creating a New Issue
 
 - Before creating a new issue, please search to ensure it doesn't already exist.
-- If the issue is related to adding or modifying a hunker down location, please include the YouTube video title in the issue title.
 - Write down the details of your issue in the description.
 - If the issue is related to adding or modifying a location, it should include:
+    - Include the YouTube video title in the issue title.
     - The latitude and longitude coordinates of the location (e.g., `54.116700003649996, -115.64754529270392`).
     - Proof that this is the correct location, such as Street View images, screenshots, coordinates, etc.
     - It doesn't always need to be 100% accurate, some videos just don't have enough information to pinpoint the exact location.
