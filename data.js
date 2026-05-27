@@ -529,4 +529,14 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "Highway Rest Area Stealth Camping",
+        "video_id": "2dsX4Moy7ws",
+        "description": "I dug out the old hammock for a quick overnight stealther. Things got pretty delicious later on when I cooked up a little beef and broccoli with a satisfying step 2 to wash it down. Best camping is stealth camping any day of the week in my books.",
+        "stealth": true,
+        "date": "2020/07/04",
+        "location": "53.57676029516075, -116.15312424491742",
+        "city": "Pinedale, AB",
+        "note": ""
+    },
 ];
