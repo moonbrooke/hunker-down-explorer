@@ -539,4 +539,14 @@ const campData = [
         "city": "Pinedale, AB",
         "note": ""
     },
+    {
+        "title": "Stealth Camping In Unfamiliar City",
+        "video_id": "9tPmEC8O78o",
+        "description": "I had the urge to do a quick stealther on our camping trip/vacation. This one was different as I haven't stealth camped in such a large unfamiliar place yet. I got to try out the zipper model of the Hennessy Hammock that beautiful wife got me for our anniversary!",
+        "stealth": true,
+        "date": "2020/08/14",
+        "location": "50.65084246195155, -120.38233283440928",
+        "city": "Kamloops, BC",
+        "note": ""
+    },
 ];
