@@ -2,6 +2,16 @@
 
 If you'd like to contribute, feel free to submit a [pull request](https://github.com/moonbrooke/hunker-down-explorer/pulls) or, if you're unfamiliar with Git/GitHub, simply open a [new issue](https://github.com/moonbrooke/hunker-down-explorer/issues) detailing what you want modified or added.
 
+## Creating a New Issue
+
+- Before creating a new issue, please search to ensure it doesn't already exist.
+- If the issue is related to adding or modifying a hunker down location, please include the YouTube video title in the issue title.
+- Write down the details of your issue in the description.
+- If the issue is related to adding or modifying a location, it should include:
+    - The latitude and longitude coordinates of the location (e.g., `54.116700003649996, -115.64754529270392`).
+    - Proof that this is the correct location, such as Street View images, screenshots, coordinates, etc.
+    - It doesn't always need to be 100% accurate, some videos just don't have enough information to pinpoint the exact location.
+
 ## How to Add or Modify a Location
 
 To add a new or modify an existing location, open `data.js` and locate the array or append a new JSON object to the bottom of the array using the following schema specification.
