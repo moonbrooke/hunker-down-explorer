@@ -519,4 +519,14 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "Urban Stealth Camping Disguised As Businessman",
+        "video_id": "HdBTEMOM0y4",
+        "description": "I threw together a quick disguise from the thrift store and went out camping behind some houses on a residential trail. I brought the hammock with me for a shelter this trip and used a fairly small kit. A whole new world of possibilities for camping secretly has opened up!",
+        "stealth": true,
+        "date": "2021/07/23",
+        "location": "53.508446505177666, -113.60231353930558",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
