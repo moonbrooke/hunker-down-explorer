@@ -15,8 +15,8 @@
     "type": "commonjs",
     "main": "data.js",
     "scripts": {
-        "dev": "tailwindcss -i ./src/input.css -o ./style.css --watch",
-        "build": "tailwindcss -i ./src/input.css -o ./style.css --minify"
+        "dev": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
+        "build": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify"
     },
     "devDependencies": {
         "tailwindcss": "^3.4.19"
