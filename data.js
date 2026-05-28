@@ -559,4 +559,14 @@ const campData = [
         "city": "Hinton, AB",
         "note": ""
     },
+    {
+        "title": "Stealth Camping In Garbage Castle",
+        "video_id": "micGRgZsji8",
+        "description": "This week I went camping in a beautiful garbage sculpture in Lethbridge Alberta known as The Thing, Rust Rock Cathedral, or simply Garbage Castle. I had to be a little stealthy as I wasn't sure of the actual laws regarding camping in the city river valley. Set up camp as usual and had a reasonably good sleep hunkered down under the stars.",
+        "stealth": true,
+        "date": "2021/03/19",
+        "location": "49.684500615083905, -112.85814729448231",
+        "city": "Lethbridge, AB",
+        "note": ""
+    },
 ];
