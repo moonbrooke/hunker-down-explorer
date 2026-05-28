@@ -579,4 +579,14 @@ const campData = [
         "city": "Patricia, AB",
         "note": ""
     },
+    {
+        "title": "Stealth Camping Behind Home Depot",
+        "video_id": "IXlO091nJ1s",
+        "description": "I found an amazing spot to do a little stealth camping for the night behind a Home Depot! I brought out the hammock of course, but there were no proper trees to hang it. I used the hammock and camped directly on the ground as a bivvy sack to keep the bugs away and it worked fairly well. The MRE didn't work out too well because of an expired ration heater, but I did find some food in the area.",
+        "stealth": true,
+        "date": "2021/06/18",
+        "location": "53.542085987022155, -113.92808666228191",
+        "city": "Spruce Grove, AB",
+        "note": ""
+    },
 ];
