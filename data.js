@@ -619,4 +619,24 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "4 Person Stealth Camping",
+        "video_id": "M2oCoDCiWWE",
+        "description": "We had a close call when I brought out a documentary crew for a stealth camping trip. I expected a very smooth trip but things didn't go to plan. I picked an easy stealth camping spot, but you never know what can happen when it comes to stealth camping. Thanks to Mark, Gabe, and Ethan for coming along and documenting our crazy little lives.",
+        "stealth": true,
+        "date": "2022/07/29",
+        "location": "53.381727538381476, -117.62274529432487",
+        "city": "Hinton, AB",
+        "note": "This is the same area as the 'Stealth Camping Behind Billboard' video from a few months earlier. And unfortunately, it doesn't seem like the documentary filmed in this video was ever released."
+    },
+    {
+        "title": "The Town Too Nice For Stealth Camping",
+        "video_id": "sTimjeJqTIw",
+        "description": "Beautiful Canmore Alberta, It looked like a stealth camping paradise on first inspection, but the place is nice and the community definitely wants to keep it that way. I couldn't get my planned camping done (I know I sound like a broken record), but here's a little hello to not leave anyone hanging on a Thursday night. As mentioned in the video, the next few weeks will be off schedule-wise, still dealing with the backlog from the failed BC trip and this cold weather. Cheers everyone and you should see me here on Sunday.",
+        "stealth": false,
+        "date": "2022/01/21",
+        "location": "51.08545079377724, -115.36525556552296",
+        "city": "Canmore, AB",
+        "note": "It's not a camping episode. Steve drives around Canmore, Alberta, while discussing possible stealth camping spots. More: https://github.com/moonbrooke/hunker-down-explorer/issues/16"
+    },
 ];
