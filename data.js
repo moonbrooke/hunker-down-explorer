@@ -599,4 +599,14 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "Stealth Camping Behind Bus Station",
+        "video_id": "bjIAn9KO1i8",
+        "description": "I found a really nice camping spot behind a transit station this week! It was a little cold, but I was well enough equipped to get through the night. There were lots of busses coming and going and transit police usually patrolling the area for troublemakers.",
+        "stealth": true,
+        "date": "2022/01/28",
+        "location": "53.523068738329535, -113.66918816124976",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
