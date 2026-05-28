@@ -16,7 +16,7 @@ Clearly explain the details of the problem or suggestion in the description fiel
 If your issue involves adding a new location or modifying an existing one, please ensure it includes the following specific details:
 
 * **Issue Title:** Include the **YouTube video title** in the title of your issue.
-* **Coordinates:** Provide the latitude and longitude of the location. 
+* **Coordinates:** Provide the latitude and longitude of the location. [How to get the coordinates?](./assets/img/howto_coords.png)
     > *Example:* `54.116700003649996, -115.64754529270392`
 * **Supporting Proof:** Include evidence that verifies this is the correct location. This can include:
     * Google Street View links or screenshots.
@@ -53,7 +53,7 @@ To add a new or modify an existing location, edit `data.js` and locate the array
 | description | String | The text description from the YouTube video. |
 | stealth | Boolean | Set to `true` if it's a stealth camping episode or `false` if it's non-stealth camping episode. |
 | date | String | The date when the video is published. Format: `YYYY/MM/DD`. |
-| location | String | Latitude and longitude coordinate string comma-separated (e.g., `"54.116700003649996, -115.64754529270392"`). |
+| location | String | Latitude and longitude coordinate string comma-separated (e.g., `"54.116700003649996, -115.64754529270392"`). [How to get the coordinates?](./assets/img/howto_coords.png) |
 | city | String | The city and state/province code (e.g., `"Camrose, AB"` or `"Salmon River, NS"`). |
 | note | String | Optional developer/contributor annotations or corrections regarding accuracy. Leave as `""` if not needed. |
 
