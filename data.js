@@ -639,4 +639,14 @@ const campData = [
         "city": "Canmore, AB",
         "note": "It's not a camping episode. Steve drives around Canmore, Alberta, while discussing possible stealth camping spots. More: https://github.com/moonbrooke/hunker-down-explorer/issues/16"
     },
+    {
+        "title": "Stealth Camping Disguised As Construction Worker",
+        "video_id": "_0NpNAJHSuA",
+        "description": "I went stealth camping behind some new construction and of course, the best disguise I could think of was a construction worker. I loaded up my sleeping bag and gear in a wheelbarrow and headed out to camp for the night. Pretty successful night, just camped under the stars. Thankfully no rain this time!",
+        "stealth": true,
+        "date": "2021/10/22",
+        "location": "53.42227157587406, -113.55308929680827",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
