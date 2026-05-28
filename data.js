@@ -569,4 +569,14 @@ const campData = [
         "city": "Lethbridge, AB",
         "note": ""
     },
+    {
+        "title": "Stealth Camping In Abandoned Gas Station",
+        "video_id": "eOo0jMfXI_E",
+        "description": "DO NOT ATTEMPT unless you are sure about trespassing laws where you are! In this video, I was NOT breaking my local trespass laws, but this may not be the case in your area. I found an abandoned gas station on our adventure, and it sure fits the bill for a stealth camping adventure. Of course I had to make sure the property didn't have any 'No Trespassing' signs, because that would of course stop me from entering. It was an exciting night, really cool to see abandoned places first hand. A storm rolled through in the middle of the night and that made it an interesting ride back to the hotel.",
+        "stealth": true,
+        "date": "2021/04/02",
+        "location": "50.68933642451077, -111.66519586687545",
+        "city": "Patricia, AB",
+        "note": ""
+    },
 ];
