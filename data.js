@@ -589,4 +589,14 @@ const campData = [
         "city": "Spruce Grove, AB",
         "note": ""
     },
+    {
+        "title": "Abandoned Campground Heat Wave Stealth Camping",
+        "video_id": "CdBpgNXytoE",
+        "description": "I finally got to camp in a spot I've been checking out for quite a while. It's an abandoned campground in the city of Edmonton Alberta. This was a city-owned campground and now it's just used as a park. It was quite hot, quite busy, but made for a very fun stealth camping trip. There was a heat warning of course, but not quite too hot for camping like last week.",
+        "stealth": true,
+        "date": "2021/07/16",
+        "location": "53.42197284839163, -113.50110908045785",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
