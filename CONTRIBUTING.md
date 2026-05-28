@@ -25,9 +25,9 @@ If your issue involves adding a new location or modifying an existing one, pleas
 
 > 💡 **Note on Accuracy:** Don't worry if you can't pin down the exact square inch. Some videos simply don't provide enough visual context for perfect precision, **best guesses and close approximations are completely welcome!**
 
-## Pull Request Submission / How to Add or Modify a Location
+## Pull Request Submissions / How to Add or Modify a Location
 
-To add a new or modify an existing location, open `data.js` and locate the array or append a new JSON object to the bottom of the array using the following schema specification.
+To add a new or modify an existing location, edit `data.js` and locate the array or append a new JSON object to the bottom of the array using the following schema specification.
 
 ### Data Schema Reference
 
