@@ -609,4 +609,14 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "Urban Stealth Camping In Hunting Blind",
+        "video_id": "2IglNgCYgMU",
+        "description": "I finally picked up a hunting blind for stealth camping. I have been wanting to try one out for camping for quite a while, but they aren't very large compared with a tent. This one was a ZonZ hub ground blind. I brought the little buddy heater for warmth and burned through 3 propane cylinders. The night was cold, and by morning my feet were cold but it was still a great camping trip!",
+        "stealth": true,
+        "date": "2022/02/04",
+        "location": "53.41843885258778, -113.51775848494242",
+        "city": "Edmonton, AB",
+        "note": ""
+    },
 ];
