@@ -549,4 +549,14 @@ const campData = [
         "city": "Kamloops, BC",
         "note": ""
     },
+    {
+        "title": "Stealth Camping At Canadian Tire Repair Shop",
+        "video_id": "WahOKTQfsCU",
+        "description": "I went to do a stealth camp at Canadian Tire! It didn't turn out as long of a video as I thought it would when I was filming, but it was fun. Parking lot camping at it's finest. Late into the lot, early out in the morning. Next weeks video will be longer I promise haha, I had no idea how little footage I got after 20 hours in a car.",
+        "stealth": true,
+        "date": "2021/01/24",
+        "location": "53.3855502610344, -117.62417281581212",
+        "city": "Hinton, AB",
+        "note": ""
+    },
 ];
