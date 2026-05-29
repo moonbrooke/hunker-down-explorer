@@ -657,6 +657,6 @@ const campData = [
         "date": "2023/03/17",
         "location": "49.35637921416796, -124.58251904289841",
         "city": "Dunsmuir, BC",
-        "note": "He actually drove pretty far. Based on the video, he bought some supplies from Save-On-Foods in Parksville, then drove to Chemainus to get some eggs, and finally headed back the other way to a camping spot on the Inland Island Hwy around Dunsmuir. The egg vending machine: 48.881313057156305, -123.67881158424271. Save-On-Foods: 49.32966233272833, -124.34503785056945. More: https://github.com/moonbrooke/hunker-down-explorer/issues/18"
+        "note": "He actually drove pretty far. Based on the video, he bought some supplies from Save-On-Foods in Parksville, then drove to Chemainus to get some eggs, and finally headed back the other way to a camping spot on the Inland Island Hwy around Dunsmuir. Save-On-Foods: 49.32966233272833, -124.34503785056945. The egg vending machine: 48.881313057156305, -123.67881158424271. More: https://github.com/moonbrooke/hunker-down-explorer/issues/18"
     },
 ];
