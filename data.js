@@ -649,4 +649,14 @@ const campData = [
         "city": "Edmonton, AB",
         "note": ""
     },
+    {
+        "title": "Car Camo Stealth Camping",
+        "video_id": "Cn3MHTokaSQ",
+        "description": "I found a spot along the side of the highway that was perfect to pull the SUV in for a night of secret camping. I covered the car with hunter's camo cloth and it blended in wonderfully. It was a bit of a noisy campsite, but I got used to it. Camped out in the car I couldn't hear too much traffic.",
+        "stealth": true,
+        "date": "2023/03/17",
+        "location": "48.881314618820845, -123.67881059565688",
+        "city": "Chemainus, BC",
+        "note": "This is where the egg vending machine is located. The camping spot is yet to be discovered. More: https://github.com/moonbrooke/hunker-down-explorer/issues/18"
+    },
 ];
