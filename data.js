@@ -137,7 +137,7 @@ const campData = [
         "date": "2020/11/20",
         "location": "53.531116661915654, -113.57855666421239",
         "city": "Edmonton, AB",
-        "note": "This is the place where he gets the pizza."
+        "note": "This is the place where he gets the pizza. More: https://github.com/moonbrooke/hunker-down-explorer/issues/3"
     },
     {
         "title": "Train Wreck Camping",
