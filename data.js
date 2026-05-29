@@ -337,7 +337,7 @@ const campData = [
         "date": "2023/12/08",
         "location": "50.60218093483054, -128.26989516087798",
         "city": "Mount Waddington B, BC",
-        "note": "Might not be the exact spot, but it's around this area. The cabin is located within Cape Palmerston area."
+        "note": "Might not be the exact spot, but it's around this area. The cabin is located within Cape Palmerston area. More: https://github.com/moonbrooke/hunker-down-explorer/issues/5"
     },
     {
         "title": "Camping In Abandoned Cold War Nuclear Bunker",
