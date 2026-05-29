@@ -237,7 +237,7 @@ const campData = [
         "date": "2024/07/12",
         "location": "33.178457876071704, -84.02047397486659",
         "city": "Jackson, GA",
-        "note": "This is the glamping place. Not Steve's actual Yurt."
+        "note": "This is the glamping place. Not Steve's actual Yurt. More: https://github.com/moonbrooke/hunker-down-explorer/issues/19"
     },
     {
         "title": "Ferry Terminal Stealth Camping",
@@ -287,7 +287,7 @@ const campData = [
         "date": "2023/04/14",
         "location": "48.46205431611329, -123.5617658642171",
         "city": "Victoria, BC",
-        "note": "This is the campground he's staying at."
+        "note": "This is the campground he's staying at. More: https://github.com/moonbrooke/hunker-down-explorer/issues/22"
     },
     {
         "title": "Stealth Camping Behind Billboard",
@@ -307,7 +307,7 @@ const campData = [
         "date": "2024/05/17",
         "location": "53.5662296414073, -114.4563124446957",
         "city": "Wabamun, AB",
-        "note": "This is the campground he's staying at."
+        "note": "This is the campground he's staying at. More: https://github.com/moonbrooke/hunker-down-explorer/issues/20"
     },
     {
         "title": "DIY E-Bike Stealth Camping",
@@ -407,7 +407,7 @@ const campData = [
         "date": "2024/01/19",
         "location": "49.96563023441148, -125.58078124151291",
         "city": "Quinsam, BC",
-        "note": "This is the campground he's staying at."
+        "note": "This is the campground he's staying at. More: https://github.com/moonbrooke/hunker-down-explorer/issues/21"
     },
     {
         "title": "Donation Bin Stealth Camping",
