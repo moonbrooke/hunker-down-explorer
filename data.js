@@ -659,4 +659,14 @@ const campData = [
         "city": "Dunsmuir, BC",
         "note": "He actually drove pretty far. Based on the video, he bought some supplies from Save-On-Foods in Parksville, then drove to Chemainus to get some eggs, and finally headed back the other way to a camping spot on the Inland Island Hwy around Dunsmuir. Save-On-Foods: 49.32966233272833, -124.34503785056945. The egg vending machine: 48.881313057156305, -123.67881158424271. More: https://github.com/moonbrooke/hunker-down-explorer/issues/18"
     },
+    {
+        "title": "Stealth Camping In Highway Median",
+        "video_id": "X9XIC9P4UV0",
+        "description": "Headed out for a quick stealther in the highway median. It was a nice drive just outside of the city and I managed to find the perfect place. Set up the hammock for a good night of hunkering down. Lots of traffic but was still a decent sleep!",
+        "stealth": true,
+        "date": "2020/04/10",
+        "location": "53.61322131791189, -115.36605317228361",
+        "city": "Granada, AB",
+        "note": "More: https://github.com/moonbrooke/hunker-down-explorer/issues/24"
+    },
 ];
