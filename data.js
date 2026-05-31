@@ -669,4 +669,14 @@ const campData = [
         "city": "Granada, AB",
         "note": "More: https://github.com/moonbrooke/hunker-down-explorer/issues/24"
     },
+    {
+        "title": "Abandoned Pipe Camping",
+        "video_id": "PxomlkNtU3s",
+        "description": "I camped for the night in a long-abandoned water pipe. The pipe has not been used since the 1970s and is overgrown with moss. Thanks to a tip from viewer Ross Stuart, I found an access hatch. I brought my basic camping gear, cot, sleeping bag, folding stool and some cooking equipment. Was a fairly chilly night camping in the pipe but I survived! It was an extremely fun adventure and cool to see abandoned infrastructure like this.",
+        "stealth": false,
+        "date": "2025/01/20",
+        "location": "48.436682890976925, -123.69955984213668",
+        "city": "Sooke, BC",
+        "note": "Not enough context. Although I'm almost sure it's the Sooke Flow Pipe Trail. More: https://github.com/moonbrooke/hunker-down-explorer/issues/25"
+    },
 ];
