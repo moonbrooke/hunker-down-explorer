@@ -679,4 +679,14 @@ const campData = [
         "city": "Sooke, BC",
         "note": "Not enough context. Although I'm almost sure it's the Sooke Flow Pipe Trail. More: https://github.com/moonbrooke/hunker-down-explorer/issues/25"
     },
+    {
+        "title": "Rambo Town Stealth Camping",
+        "video_id": "u4n8r0ajqks",
+        "description": "I went out for a little bit of stealth camping with Greg Ovens @OvensRockyMountainBushcraft in Hope, B.C. where they filmed Rambo First Blood. I dare say I was treated better by the local police than what John Rambo experienced in the movie. We found a nice little secluded camping spot, set up our hammocks and cooked some great food! The campsite had some road noise, as is usual for stealth camping.",
+        "stealth": true,
+        "date": "2026/05/31",
+        "location": "49.372458629309136, -121.44113853589312",
+        "city": "Hope, BC",
+        "note": ""
+    },
 ];
