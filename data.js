@@ -175,9 +175,9 @@ const campData = [
         "description": "I went out stealth camping in a highway median using a hunting blind for a shelter. It was a short walk from town through a rough trail and the town had all the camping supplies I could require for the trip. There was a little rain, a lot of traffic, and as always some good old fashioned camping with the usual awful food I cook.",
         "stealth": true,
         "date": "2026/04/20",
-        "location": "49.128306576622926, -123.92944929324125",
+        "location": "49.12937874330818, -123.92991704524778",
         "city": "Nanaimo, BC",
-        "note": "Might not be the exact spot, but it's around this area."
+        "note": ""
     },
     {
         "title": "Small Town Stealth Camping",
