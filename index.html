@@ -271,7 +271,6 @@
                 sortBy: 'date',
                 sortDesc: true,
                 activeCamp: null,
-                // 1. Add state to track the active carousel item
                 mediaIndex: 0, 
 
                 init() {
@@ -279,8 +278,6 @@
                     this.$watch('currentFilter', () => this.checkActiveCamp());
                     this.$watch('sortBy', () => this.checkActiveCamp());
                     this.$watch('sortDesc', () => this.checkActiveCamp());
-                    
-                    // 2. Automatically reset carousel index back to 0 (Map) when switching items
                     this.$watch('activeCamp', () => {
                         this.mediaIndex = 0;
                     });
@@ -302,7 +299,6 @@
                     }
                 },
 
-                // 3. Add helper methods to handle slider loops cleanly
                 nextMedia() {
                     this.mediaIndex = this.mediaIndex === 0 ? 1 : 0;
                 },
