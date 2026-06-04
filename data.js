@@ -689,4 +689,14 @@ const campData = [
         "city": "Hope, BC",
         "note": ""
     },
+    {
+        "title": "Camping On Homemade Rain Barrel Pontoon Raft On The Lake",
+        "video_id": "U_u6rWe_xkQ",
+        "description": "We built the good old homemade rain barrel camping raft and put it into the lake to test it out for a night of hunkering down. We have another trip coming up on the river for a few days!  Lots of support made this video possible and I'd like to thank all my subscribers for making these videos a reality.",
+        "stealth": false,
+        "date": "2019/10/10",
+        "location": "53.55942152975219, -114.44102491034633",
+        "city": "Wabamun, AB",
+        "note": "The pin marks the raft launch location."
+    },
 ];
