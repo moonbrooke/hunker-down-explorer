@@ -49,13 +49,13 @@ To add a new or modify an existing location, edit `data.js` and locate the array
 | Field | Type   | Description |
 | ----- | ------ | ----------- |
 | title | String | The title of the YouTube video. |
-| video_id   | String | The YouTube video ID only (e.g., if the video URL is `https://www.youtube.com/watch?v=lblyg-NOVjE`, the ID is `lblyg-NOVjE`). |
+| video_id   | String | The YouTube video ID only (e.g., if the video URL is `https://www.youtube.com/watch?v=1NGa_Xt77xU`, the ID is `1NGa_Xt77xU`). |
 | description | String | The text description from the YouTube video. |
 | stealth | Boolean | Set to `true` if it's a stealth camping episode or `false` if it's non-stealth camping episode. |
 | date | String | The date when the video is published. Format: `YYYY/MM/DD`. |
 | location | String | Latitude and longitude coordinate string comma-separated (e.g., `"54.116700003649996, -115.64754529270392"`). [How to get the coordinates?](./assets/img/howto_coords.png) |
-| city | String | The city and state/province code (e.g., `"Camrose, AB"` or `"Salmon River, NS"`). |
-| note | String | Optional developer/contributor annotations or corrections regarding accuracy. Leave as `""` if not needed. |
+| city | String | The city and state/province code (e.g., `"Whitecourt, AB"` or `"Salmon River, NS"`). |
+| note | String | Optional developer/contributor annotations or corrections regarding accuracy or other details. Leave as `""` if not needed. |
 
 ### Verify before Submitting the Pull Request
 
