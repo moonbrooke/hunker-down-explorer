@@ -527,7 +527,7 @@ const campData = [
         "date": "2021/07/23",
         "location": "53.508446505177666, -113.60231353930558",
         "city": "Edmonton, AB",
-        "note": ""
+        "note": "More: https://github.com/moonbrooke/hunker-down-explorer/issues/1"
     },
     {
         "title": "Highway Rest Area Stealth Camping",
@@ -607,7 +607,7 @@ const campData = [
         "date": "2022/01/28",
         "location": "53.523068738329535, -113.66918816124976",
         "city": "Edmonton, AB",
-        "note": ""
+        "note": "More: https://github.com/moonbrooke/hunker-down-explorer/issues/13"
     },
     {
         "title": "Urban Stealth Camping In Hunting Blind",
@@ -617,7 +617,7 @@ const campData = [
         "date": "2022/02/04",
         "location": "53.41843885258778, -113.51775848494242",
         "city": "Edmonton, AB",
-        "note": ""
+        "note": "More: https://github.com/moonbrooke/hunker-down-explorer/issues/14"
     },
     {
         "title": "4 Person Stealth Camping",
@@ -647,7 +647,7 @@ const campData = [
         "date": "2021/10/22",
         "location": "53.42227157587406, -113.55308929680827",
         "city": "Edmonton, AB",
-        "note": ""
+        "note": "More: https://github.com/moonbrooke/hunker-down-explorer/issues/10"
     },
     {
         "title": "Car Camo Stealth Camping",
