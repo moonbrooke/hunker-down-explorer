@@ -699,4 +699,14 @@ const campData = [
         "city": "Wabamun, AB",
         "note": "The pin marks the raft launch location."
     },
+    {
+        "title": "Alberta Badlands Camping",
+        "video_id": "jghSSkg-T9o",
+        "description": "Just a regular camping trip with Beautiful Wife in the southern Alberta badlands. We got a campsite at Writing On Stone Provincial Park, which is the site of the largest concentration of stone art petroglyphs in North America. One of the last winter camping trips for this year.",
+        "stealth": false,
+        "date": "2021/03/12",
+        "location": "49.08353749127287, -111.6172465026993",
+        "city": "Aden, AB",
+        "note": "This is the campground they're staying at."
+    },
 ];
