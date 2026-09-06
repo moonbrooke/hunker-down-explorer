@@ -709,4 +709,14 @@ const campData = [
         "city": "Aden, AB",
         "note": "This is the campground they're staying at."
     },
+    {
+        "title": "Comfortable Stealth Camping",
+        "video_id": "voL34Ljme_g",
+        "description": "I went out camping in a busy little area in the small town of Chemainus, BC. It was a lovely night with a very comfortable inflatable bed! I normally stealth camp with a hammock or under a tarp with a sleeping pad, but my shoulder has been causing me distress, and I decided it was worth the "unstealthy" equipment addition. Camo netting around the campsite gave me pretty good camouflage. I toured the town and even went out for a pint at the pub across the road. Very nice campsite and great night of late summer adventure.",
+        "stealth": true,
+        "date": "2026/09/06",
+        "location": "48.926047902671655, -123.72853869305496",
+        "city": "Chemainus, BC",
+        "note": ""
+    },
 ];
