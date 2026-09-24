@@ -269,9 +269,10 @@
                                         </div>
                                         <h2 class="mt-3 text-lg font-semibold leading-tight tracking-tight"
                                             x-text="camp.title"></h2>
-                                        <div class="mt-2 flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
-                                            <svg aria-hidden="true" class="h-3.5 w-3.5" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24">
+                                        <div
+                                            class="mt-2 flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+                                            <svg aria-hidden="true" class="h-3.5 w-3.5" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
                                                     d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z" />
                                                 <circle cx="12" cy="10" r="2.5" />
@@ -281,23 +282,23 @@
                                     </button>
                                 </template>
 
-                            <div x-show="filteredLocations.length === 0" x-cloak class="px-4 py-14 text-center">
-                                <div
-                                    class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-zinc-400 dark:bg-zinc-800">
-                                    <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
-                                            d="m21 21-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                    </svg>
+                                <div x-show="filteredLocations.length === 0" x-cloak class="px-4 py-14 text-center">
+                                    <div
+                                        class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-zinc-400 dark:bg-zinc-800">
+                                        <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                d="m21 21-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="mt-4 font-semibold">🏕️ No camps found</h3>
+                                    <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Try a different search or
+                                        filter.</p>
+                                    <button type="button" @click="clearFilters"
+                                        class="mt-4 text-sm font-medium text-sky-700 hover:underline dark:text-sky-300">
+                                        Clear all filters
+                                    </button>
                                 </div>
-                                <h3 class="mt-4 font-semibold">🏕️ No camps found</h3>
-                                <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Try a different search or
-                                    filter.</p>
-                                <button type="button" @click="clearFilters"
-                                    class="mt-4 text-sm font-medium text-sky-700 hover:underline dark:text-sky-300">
-                                    Clear all filters
-                                </button>
-                            </div>
                             </div>
                         </div>
                     </div>
@@ -368,8 +369,11 @@
                                                 </span>
                                             </div>
                                         </a>
-                                        <p class="min-w-0 text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-300"
-                                            x-text="activeCamp.description"></p>
+                                        <p
+                                            class="min-w-0 text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-300">
+                                            <b class="text-zinc-500 dark:text-zinc-400">YouTube Description:
+                                            </b><br><span x-text="activeCamp.description"></span>
+                                        </p>
                                     </div>
                                     <div class="clear-both"></div>
 
