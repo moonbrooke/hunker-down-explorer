@@ -1,6 +1,6 @@
 # hunker-down-explorer
 
-Catalogue of [Steve Wallis's](https://www.youtube.com/@campingwithsteve) camping locations.
+Catalog of [Steve Wallis's](https://www.youtube.com/@campingwithsteve) camping locations.
 
 ![Hunker Down Explorer](./assets/img/ss-new.jpeg)
 
