@@ -2,7 +2,7 @@
 
 Catalogue of [Steve Wallis's](https://www.youtube.com/@campingwithsteve) camping locations.
 
-![Hunker Down Explorer](./assets/img/ss.png)
+![Hunker Down Explorer](./assets/img/ss-new.jpeg)
 
 <p align="center">
     <a href="https://github.com/moonbrooke/hunker-down-explorer/blob/main/CONTRIBUTING.md">Contribute</a>
