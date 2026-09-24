@@ -1,350 +1,714 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunker Down Explorer</title>
-    <link rel="icon" href="https://fav.farm/🏕️" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#18181b" />
+    <meta name="description" content="Catalog of Steve Wallis's camping locations." />
+    <title>HUNKER DOWN CATALOG</title>
+    <link rel="icon" href="https://fav.farm/🏕" />
 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link href="./assets/css/style.css" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <style type="text/tailwindcss"> -->
+    <!--     @custom-variant dark (&:where(.dark, .dark *)); -->
+    <!---->
+    <!--   @theme { -->
+    <!--     --font-sans: "Roboto Condensed", ui-sans-serif, system-ui, sans-serif; -->
+    <!--     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; -->
+    <!--   } -->
+    <!-- </style> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <script>
-        // Theme FOUC fix
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    </script>
-
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet" />
     <style>
         [x-cloak] {
             display: none !important;
         }
+
+        .hover-underline {
+            position: relative;
+            text-decoration: none;
+        }
+
+        .hover-underline::after {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            content: '';
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .scrollbar-thin {
+            scrollbar-color: #a1a1aa transparent;
+            scrollbar-width: thin;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background: #a1a1aa;
+            border-radius: 9999px;
+        }
     </style>
+    <script>
+        try {
+            if (localStorage.getItem('camp-theme') === 'light') {
+                document.documentElement.classList.remove('dark');
+            }
+        } catch {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 </head>
 
-<body x-data="hunkerApp"
-    class="bg-zinc-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 transition-colors duration-300 font-sans antialiased flex flex-col p-4 md:p-8 dark:[color-scheme:dark]">
-
-    <div class="max-w-6xl mx-auto w-full flex flex-col h-full gap-6">
-
-        <header class="flex justify-between items-start md:items-center mb-6">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-widest uppercase text-zinc-900 dark:text-zinc-100">
-                🏕️ HUNKER DOWN EXPLORER
-            </h1>
-
-            <button @click="toggleTheme()"
-                class="p-2 mt-1 rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors focus:outline-none shrink-0"
-                aria-label="Toggle Theme">
-                <svg x-show="!isDark" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                    </path>
-                </svg>
-                <svg x-show="isDark" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
-                    </path>
-                </svg>
-            </button>
-        </header>
-
-        <div class="flex flex-col xl:flex-row gap-4 items-center w-full">
-
-            <div class="flex items-center gap-2">
-                <span class="font-bold text-lg mr-2">Sort</span>
-                <select x-model="sortBy"
-                    class="h-11 bg-zinc-300 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200 px-3 font-bold border-2 border-transparent focus:outline-none focus:border-zinc-500 cursor-pointer transition">
-                    <option value="date">Date</option>
-                    <option value="name">Name</option>
-                </select>
-                <button @click="sortDesc = !sortDesc" x-text="sortDesc ? '↓ Desc' : '↑ Asc'"
-                    class="h-11 px-3 font-bold bg-zinc-300 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-400 dark:hover:bg-zinc-600 transition w-24 text-center border-2 border-transparent"></button>
+<body
+    class="min-h-screen overflow-x-hidden bg-zinc-50 font-sans text-zinc-800 antialiased selection:bg-zinc-300 selection:text-zinc-900 transition-colors duration-300 dark:bg-zinc-900 dark:text-zinc-200 dark:selection:bg-zinc-700 dark:selection:text-zinc-100">
+    <div x-data="campExplorer" x-init="init" class="relative isolate min-h-screen overflow-hidden">
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+            <div class="absolute -right-32 -top-40 h-96 w-96 rounded-full bg-sky-300/20 blur-3xl dark:bg-sky-400/10">
             </div>
-
-            <div class="flex items-center gap-2 xl:pl-4">
-                <span class="font-bold text-lg mr-2">Filter</span>
-                <button @click="currentFilter = currentFilter === 'stealth' ? null : 'stealth'"
-                    :class="currentFilter === 'stealth' ? 'bg-zinc-500 dark:bg-zinc-600 text-white border-zinc-500 shadow-inner' : 'bg-zinc-300 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 border-transparent'"
-                    class="px-5 py-2 font-bold border transition">Stealth</button>
-                <button @click="currentFilter = currentFilter === 'non-stealth' ? null : 'non-stealth'"
-                    :class="currentFilter === 'non-stealth' ? 'bg-zinc-500 dark:bg-zinc-600 text-white border-zinc-500 shadow-inner' : 'bg-zinc-300 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 border-transparent'"
-                    class="px-5 py-2 font-bold border transition">Non-Stealth</button>
-            </div>
-
-            <div class="flex-grow w-full xl:w-auto xl:ml-4">
-                <input type="text" x-model="searchQuery" placeholder="Search..."
-                    class="w-full border-2 border-zinc-900 dark:border-zinc-600 bg-white dark:bg-zinc-800 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-zinc-500 font-bold text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 transition-colors">
+            <div class="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-amber-200/20 blur-3xl dark:bg-amber-300/5">
             </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-6 flex-grow items-stretch">
+        <div class="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 py-7 sm:px-8 sm:py-10 lg:px-10">
+            <header class="flex items-center justify-between">
+                <a href="#top"
+                    class="text-xl font-bold uppercase tracking-[0.28em] transition-colors hover:text-sky-700 dark:hover:text-sky-300 sm:text-2xl">
+                    🏕️HUNKERDOWN<span class="text-red-400 dark:text-zinc-500">catalog.</span>
+                </a>
 
-            <div class="w-full md:w-1/3 relative">
-                <div
-                    class="w-full flex flex-col gap-3 overflow-y-auto pr-2 pb-4 max-h-[50vh] md:max-h-none md:absolute md:inset-0">
-                    <template x-if="filteredCamps.length === 0">
-                        <p class="text-zinc-500 dark:text-zinc-400 font-bold p-4">No results found.</p>
-                    </template>
-                    <template x-for="camp in filteredCamps" :key="camp.video_id">
-                        <div @click="activeCamp = camp"
-                            :class="activeCamp === camp ? 'bg-zinc-400 dark:bg-zinc-600 border-zinc-900 dark:border-zinc-400' : 'bg-white dark:bg-zinc-800 border-zinc-900 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-700'"
-                            class="p-4 border-2 cursor-pointer transition-colors flex flex-col shrink-0">
-                            <h3 x-text="camp.title"
-                                class="font-bold text-zinc-900 dark:text-zinc-100 text-lg leading-tight mb-2"></h3>
-                            <div class="flex justify-between items-center text-sm font-bold mt-auto">
-                                <span x-text="camp.stealth ? 'Stealth' : 'Non-Stealth'"
-                                    class="px-2 py-0.5 bg-zinc-200 text-zinc-600 border border-zinc-400 dark:bg-zinc-700 dark:text-zinc-300 dark:border-zinc-600"></span>
-                                <span class="text-zinc-600 dark:text-zinc-400 flex items-center gap-1">
-                                    <span class="text-blue-400 dark:text-blue-500">🗓️</span> <span
-                                        x-text="camp.date"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </template>
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <!-- <span -->
+                    <!--     class="hidden font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 sm:inline dark:text-zinc-400"> -->
+                    <!--     Catalogged <span x-text="locations.length"></span> locations -->
+                    <!-- </span> -->
+                    <button type="button" @click="toggleTheme"
+                        class="rounded-full p-2 transition-colors hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:hover:bg-zinc-800"
+                        :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+                        <svg x-show="theme === 'dark'" x-cloak aria-hidden="true" class="h-5 w-5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728 0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg x-show="theme === 'light'" x-cloak aria-hidden="true" class="h-5 w-5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
                 </div>
-            </div>
+            </header>
 
-            <div
-                class="w-full md:w-2/3 flex flex-col border-2 border-zinc-900 dark:border-zinc-600 bg-white dark:bg-zinc-800 transition-colors">
+            <main id="top" class="flex-1 pt-10">
+                <section class="mb-10 flex flex-col justify-between gap-8 sm:mb-14 sm:flex-row sm:items-end">
+                    <div>
+                        <!-- <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-500 dark:text-zinc-400"> -->
+                        <!--     Camping / hunker down locations -->
+                        <!-- </p> -->
+                        <h1 class="mt-4 max-w-2xl text-4xl font-bold leading-[0.95] tracking-tight sm:text-6xl">
+                            Catalog of
+                            <span class="text-sky-700 dark:text-sky-300">Steve Wallis</span>'s
+                            camping locations.
+                        </h1>
+                        <!-- <p class="mt-5 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400"> -->
+                        <!--     Catalog of Steve Wallis's camping locations. -->
+                        <!---->
+                        <!-- </p> -->
+                    </div>
 
-                <template x-if="activeCamp">
-                    <div class="flex flex-col h-full">
-                        <div class="h-[50vh] md:h-[60vh] shrink-0 border-b-2 border-zinc-900 dark:border-zinc-600 relative bg-zinc-200 dark:bg-zinc-700 transition-colors overflow-hidden group">
-    
-                            <div x-show="mediaIndex === 0" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="transform translate-x-full"
-                                x-transition:enter-end="transform translate-x-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="transform translate-x-0"
-                                x-transition:leave-end="transform -translate-x-full"
-                                class="absolute inset-0 w-full h-full">
-                                <iframe width="100%" height="100%" frameborder="0" style="border:0"
-                                    :src="`https://maps.google.com/maps?q=${encodeURIComponent(activeCamp.location)}&t=k&z=18&ie=UTF8&iwloc=&output=embed`"
-                                    allowfullscreen></iframe>
+                    <div
+                        class="flex shrink-0 gap-8 border-t border-zinc-200 pt-4 sm:border-t-0 sm:pt-0 dark:border-zinc-800">
+                        <div>
+                            <p class="font-mono text-2xl font-medium tracking-tight" x-text="locations.length"></p>
+                            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">total
+                                spots</p>
+                        </div>
+                        <div>
+                            <p class="font-mono text-2xl font-medium tracking-tight" x-text="stealthCount"></p>
+                            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">stealth
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="grid items-start gap-6 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:gap-8">
+                    <div
+                        class="min-w-0 rounded-2xl border border-zinc-200 bg-zinc-50 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/30">
+                        <div class="border-b border-zinc-200 p-4 dark:border-zinc-800 sm:p-5">
+                            <form @submit.prevent>
+                                <label for="camp-search" class="sr-only">Search camping locations</label>
+                                <div class="relative">
+                                    <svg aria-hidden="true"
+                                        class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="m21 21-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                    <input id="camp-search" x-model.debounce.200ms="search"
+                                        @keydown.escape="search = ''" type="search" autocomplete="off"
+                                        placeholder="Search places, cities, or notes"
+                                        class="w-full rounded-xl border border-zinc-200 bg-white py-3 pl-10 pr-10 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-zinc-500 dark:focus:ring-zinc-700" />
+                                    <button x-show="search" x-cloak type="button" @click="search = ''"
+                                        class="absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-zinc-400 transition hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                                        aria-label="Clear search">
+                                        <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-width="1.8" d="M6 6l12 12M18 6 6 18" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <button type="button" @click="filter = 'all'"
+                                    :class="filter === 'all' ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'"
+                                    class="rounded-full px-3 py-1.5 text-sm font-medium transition-colors">
+                                    All
+                                    <span class="ml-1 font-mono text-[10px] opacity-60" x-text="count('all')"></span>
+                                </button>
+                                <button type="button" @click="filter = 'stealth'"
+                                    :class="filter === 'stealth' ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'"
+                                    class="rounded-full px-3 py-1.5 text-sm font-medium transition-colors">
+                                    Stealth
+                                    <span class="ml-1 font-mono text-[10px] opacity-60"
+                                        x-text="count('stealth')"></span>
+                                </button>
+                                <button type="button" @click="filter = 'non-stealth'"
+                                    :class="filter === 'non-stealth' ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'"
+                                    class="rounded-full px-3 py-1.5 text-sm font-medium transition-colors">
+                                    Non-stealth
+                                    <span class="ml-1 font-mono text-[10px] opacity-60"
+                                        x-text="count('non-stealth')"></span>
+                                </button>
                             </div>
 
-                            <div x-show="mediaIndex === 1" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="transform translate-x-full"
-                                x-transition:enter-end="transform translate-x-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="transform translate-x-0"
-                                x-transition:leave-end="transform -translate-x-full"
-                                class="absolute inset-0 w-full h-full bg-black">
-                                <iframe width="100%" height="100%" frameborder="0" style="border:0"
-                                    :src="`https://www.youtube.com/embed/${activeCamp.video_id}`"
-                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen></iframe>
-                            </div>
-
-                            <button @click="prevMedia()" 
-                                class="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 bg-zinc-900/70 dark:bg-zinc-800/70 text-white hover:bg-zinc-900 border-2 border-zinc-900 dark:border-zinc-600 focus:outline-none transition-all opacity-0 group-hover:opacity-100 backdrop-blur-sm"
-                                aria-label="Previous Slide">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
-
-                            <button @click="nextMedia()" 
-                                class="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 bg-zinc-900/70 dark:bg-zinc-800/70 text-white hover:bg-zinc-900 border-2 border-zinc-900 dark:border-zinc-600 focus:outline-none transition-all opacity-0 group-hover:opacity-100 backdrop-blur-sm"
-                                aria-label="Next Slide">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-
-                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-                                <span class="px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-white bg-zinc-900/80 border border-zinc-700 select-none shadow-md"
-                                    x-text="mediaIndex === 0 ? '📍 Map View' : '📺 Video View'">
-                                </span>
+                            <div
+                                class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-zinc-200 pt-4 dark:border-zinc-800">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="mr-1 font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-400">Sort</span>
+                                    <button type="button" @click="sortKey = 'date'"
+                                        :class="sortKey === 'date' ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-700 dark:text-zinc-100' : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200'"
+                                        class="rounded-md px-2 py-1 text-xs font-medium transition-colors">
+                                        Date
+                                    </button>
+                                    <button type="button" @click="sortKey = 'name'"
+                                        :class="sortKey === 'name' ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-700 dark:text-zinc-100' : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200'"
+                                        class="rounded-md px-2 py-1 text-xs font-medium transition-colors">
+                                        Name
+                                    </button>
+                                </div>
+                                <button type="button" @click="sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'"
+                                    class="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                                    :aria-label="sortDirection === 'asc' ? 'Sort descending' : 'Sort ascending'">
+                                    <svg x-show="sortDirection === 'asc'" aria-hidden="true" class="h-3.5 w-3.5"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 19V5m0 0-5 5m5-5 5 5" />
+                                    </svg>
+                                    <svg x-show="sortDirection === 'desc'" aria-hidden="true" class="h-3.5 w-3.5"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 5v14m0 0 5-5m-5 5-5-5" />
+                                    </svg>
+                                    <span x-text="sortDirection === 'asc' ? 'Ascending' : 'Descending'"></span>
+                                </button>
                             </div>
                         </div>
 
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div class="flex flex-wrap items-center gap-3 mb-2">
-                                <span x-text="activeCamp.stealth ? 'Stealth' : 'Non-Stealth'"
-                                    class="px-2 py-1 text-sm font-bold text-zinc-600 bg-zinc-200 border border-zinc-400 dark:text-zinc-300 dark:bg-zinc-700 dark:border-zinc-600"></span>
-                                <h2 x-text="activeCamp.title"
-                                    class="text-xl md:text-2xl font-bold text-zinc-900 dark:text-zinc-100"></h2>
-                            </div>
+                        <div class="flex items-center justify-between px-4 py-3 sm:px-5">
+                            <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-400">
+                                <span x-text="filteredLocations.length"></span> results
+                            </p>
+                            <button x-show="search || filter !== 'all'" x-cloak type="button" @click="clearFilters"
+                                class="text-xs font-medium text-zinc-500 transition hover:text-zinc-900 dark:hover:text-zinc-100">
+                                Reset filters
+                            </button>
+                        </div>
 
-                            <div class="flex flex-col sm:flex-row gap-6 mt-4 flex-grow items-start">
-                                
-                                <div class="w-full sm:w-1/3 md:w-1/4 aspect-square shrink-0 border-2 border-zinc-900 dark:border-zinc-600 bg-zinc-100 dark:bg-zinc-700 overflow-hidden">
-                                    <a :href="`https://www.youtube.com/watch?v=${activeCamp.video_id}`" target="_blank" class="hover:opacity-70 transition">
-                                        <img :src="activeCamp.video_id ? `https://img.youtube.com/vi/${activeCamp.video_id}/mqdefault.jpg` : `https://picsum.photos/seed/${encodeURIComponent(activeCamp.title)}/300`"
-                                            alt="activeCamp.title"
-                                            class="w-full h-full object-cover" />
-                                    </a>
+                        <div
+                            class="scrollbar-thin max-h-[60vh] space-y-2 overflow-y-auto overscroll-contain p-3 sm:p-4 lg:max-h-[calc(100vh-22rem)]">
+                            <template x-for="camp in filteredLocations" :key="camp.location">
+                                <button type="button" @click="selectCamp(camp.location)"
+                                    :class="activeCamp?.location === camp.location ? 'border-zinc-300 bg-zinc-200 text-zinc-900 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50' : 'border-zinc-200 bg-white text-zinc-800 hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-200 dark:hover:border-zinc-700 dark:hover:bg-zinc-800/50'"
+                                    :aria-pressed="activeCamp?.location === camp.location"
+                                    class="group w-full rounded-xl border p-4 text-left transition-all focus:outline-none focus:ring-2 focus:ring-sky-500/50">
+                                    <div class="flex items-center justify-between gap-3">
+                                        <time
+                                            class="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400"
+                                            :datetime="camp.date" x-text="formatDateShort(camp.date)"></time>
+                                        <span
+                                            class="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-mono text-[9px] uppercase tracking-[0.14em]"
+                                            :class="camp.stealth ? 'bg-orange-100 text-orange-700 dark:bg-orange-300/10 dark:text-orange-300' : 'bg-sky-100 text-sky-700 dark:bg-sky-300/10 dark:text-sky-300'">
+                                            <span class="h-1.5 w-1.5 rounded-full"
+                                                :class="camp.stealth ? 'bg-orange-500' : 'bg-sky-500'"></span>
+                                            <span x-text="camp.stealth ? 'Stealth' : 'Non-stealth'"></span>
+                                        </span>
+                                    </div>
+                                    <h2 class="mt-3 text-lg font-semibold leading-tight tracking-tight"
+                                        x-text="camp.title"></h2>
+                                    <div class="mt-2 flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+                                        <svg aria-hidden="true" class="h-3.5 w-3.5" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z" />
+                                            <circle cx="12" cy="10" r="2.5" />
+                                        </svg>
+                                        <span class="truncate" x-text="camp.city"></span>
+                                    </div>
+                                </button>
+                            </template>
+
+                            <div x-show="filteredLocations.length === 0" x-cloak class="px-4 py-14 text-center">
+                                <div
+                                    class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-zinc-400 dark:bg-zinc-800">
+                                    <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                            d="m21 21-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
                                 </div>
+                                <h3 class="mt-4 font-semibold">🏕️ No camps found</h3>
+                                <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Try a different search or
+                                    filter.</p>
+                                <button type="button" @click="clearFilters"
+                                    class="mt-4 text-sm font-medium text-sky-700 hover:underline dark:text-sky-300">
+                                    Clear all filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="flex flex-col flex-grow h-full justify-between">
-                                    <div>
-                                        <p class="font-bold">YouTube Description:</p>
-                                        <p x-text="activeCamp.description"
-                                            class="text-zinc-600 dark:text-zinc-300 mb-4 text-base font-medium leading-relaxed">
-                                        </p>
+                    <div id="camp-details" class="min-w-0 scroll-mt-6">
+                        <template x-if="activeCamp">
+                            <article
+                                class="min-w-0 max-w-full overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/30">
+                                <div class="border-b border-zinc-200 p-6 dark:border-zinc-800 sm:p-8">
+                                    <!-- <div class="flex flex-wrap items-center justify-between gap-3"> -->
+                                    <!--     <p class="font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-400"> -->
+                                    <!--         Selected location</p> -->
+                                    <!-- </div> -->
 
-                                        <p class="font-bold mt-2">Developer Note:</p>
-                                        <p x-show="activeCamp.note && activeCamp.note.trim() !== ''" x-text="activeCamp.note"
-                                            class="text-amber-600 mb-4 text-base font-medium leading-relaxed"></p>
-                                        <p x-show="!activeCamp.note || activeCamp.note.trim() === ''"
-                                            class="text-amber-600 mb-4 text-base font-medium leading-relaxed">None.</p>
+                                    <h2 class="text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
+                                        x-text="activeCamp.title"></h2>
+
+                                    <div
+                                        class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-zinc-500 dark:text-zinc-400">
+                                        <span class="inline-flex items-center gap-2">
+                                            <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                    d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z" />
+                                                <circle cx="12" cy="10" r="2.5" />
+                                            </svg>
+                                            <span x-text="activeCamp.city"></span>
+                                        </span>
+                                        <span class="inline-flex items-center gap-2">
+                                            <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <rect x="3.5" y="5" width="17" height="16" rx="2" />
+                                                <path stroke-linecap="round" stroke-width="1.7"
+                                                    d="M7 3v4m10-4v4M3.5 10h17" />
+                                            </svg>
+                                            <time :datetime="activeCamp.date"
+                                                x-text="formatDate(activeCamp.date)"></time>
+                                        </span>
+                                        <span
+                                            class="ml-auto inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em]"
+                                            :class="activeCamp.stealth ? 'bg-orange-100 text-orange-700 dark:bg-orange-300/10 dark:text-orange-300' : 'bg-sky-100 text-sky-700 dark:bg-sky-300/10 dark:text-sky-300'">
+                                            <span class="h-1.5 w-1.5 rounded-full"
+                                                :class="activeCamp.stealth ? 'bg-orange-500' : 'bg-sky-500'"></span>
+                                            <span
+                                                x-text="activeCamp.stealth ? 'Stealth camping' : 'Non-stealth camping'"></span>
+                                        </span>
+                                    </div>
+
+                                    <div class="mt-7 overflow-hidden">
+                                        <a :href="youtubeWatchUrl(activeCamp.video_id)" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="group float-left mr-5 mb-3 block w-32 max-w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-sky-500/50 dark:border-zinc-700 dark:bg-zinc-800 sm:mr-6 sm:w-56 lg:w-64">
+                                            <div class="relative aspect-video overflow-hidden">
+                                                <img :src="youtubeThumbnailUrl(activeCamp.video_id)"
+                                                    :alt="`${activeCamp.title} thumbnail`"
+                                                    class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                                                    loading="lazy" />
+                                                <span
+                                                    class="absolute inset-0 flex items-center justify-center bg-zinc-950/20 transition group-hover:bg-zinc-950/35">
+                                                    <span
+                                                        class="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow-lg transition group-hover:scale-105">
+                                                        <svg aria-hidden="true" class="ml-0.5 h-5 w-5"
+                                                            fill="currentColor" viewBox="0 0 24 24">
+                                                            <path
+                                                                d="M8.5 6.8v10.4c0 .8.9 1.3 1.6.9l7.2-5.2a1.1 1.1 0 0 0 0-1.8l-7.2-5.2a1.1 1.1 0 0 0-1.6.9Z" />
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <p class="min-w-0 text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-300"
+                                            x-text="activeCamp.description"></p>
+                                    </div>
+                                    <div class="clear-both"></div>
+
+                                    <div x-show="activeCamp.note" x-cloak
+                                        class="mt-6 rounded-xl border border-amber-200 bg-amber-50/70 p-4 dark:border-amber-300/20 dark:bg-amber-300/5">
+                                        <div class="flex items-center gap-2 text-amber-800 dark:text-amber-200">
+                                            <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                    d="M12 9v4m0 4h.01M10.3 4.5 2.8 17.2A2 2 0 004.5 20h15a2 2 0 001.7-2.8L13.7 4.5a2 2 0 00-3.4 0z" />
+                                            </svg>
+                                            <span class="text-xs font-semibold uppercase tracking-[0.2em]">Developer
+                                                Note</span>
+                                        </div>
+                                        <p class="mt-2 text-sm leading-relaxed text-amber-900/80 dark:text-amber-100/70"
+                                            x-text="activeCamp.note"></p>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="flex flex-wrap flex-row justify-between items-center gap-4 pt-4">
-                                <a :href="`https://www.youtube.com/watch?v=${activeCamp.video_id}`" target="_blank"
-                                    class="px-6 py-2 bg-red-600 text-white font-bold text-sm tracking-wide hover:bg-red-700 transition whitespace-nowrap">
-                                    WATCH ON YOUTUBE
-                                </a>
                                 <div
-                                    class="flex flex-wrap items-center gap-2 text-sm font-bold text-zinc-500 dark:text-zinc-400">
-                                    <a :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activeCamp.location)}`"
-                                        target="_blank"
-                                        class="text-blue-500 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300 transition">
-                                        Check on Google Maps
-                                    </a>
-                                    <span class="text-pink-600 dark:text-pink-400 ml-2"
-                                        x-text="`📍 ${activeCamp.city}`"></span>
-                                    <span class="ml-2" x-text="`🗓️ ${activeCamp.date}`"></span>
+                                    class="min-w-0 max-w-full border-t border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/30">
+                                    <div
+                                        class="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-200 px-5 py-4 dark:border-zinc-800 sm:px-6">
+                                        <div>
+                                            <div class="mt-1 flex items-center gap-2">
+                                                <h3 class="text-sm font-semibold uppercase tracking-[0.18em]"
+                                                    x-text="activeEmbed === 'map' ? 'Satellite map' : 'YouTube video'">
+                                                </h3>
+                                                <span class="font-mono text-[10px] text-zinc-400"
+                                                    x-text="activeEmbed === 'map' ? '01' : '02'"></span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button type="button" @click="previousEmbed"
+                                                class="flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition hover:border-zinc-400 hover:bg-zinc-100 hover:text-zinc-900 focus:outline-none focus:ring-2 focus:ring-sky-500/50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+                                                aria-label="Previous media">
+                                                <svg aria-hidden="true" class="h-4 w-4" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="m15 18-6-6 6-6" />
+                                                </svg>
+                                            </button>
+                                            <button type="button" @click="nextEmbed"
+                                                class="flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition hover:border-zinc-400 hover:bg-zinc-100 hover:text-zinc-900 focus:outline-none focus:ring-2 focus:ring-sky-500/50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+                                                aria-label="Next media">
+                                                <svg aria-hidden="true" class="h-4 w-4" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="m9 18 6-6-6-6" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 border-b border-zinc-200 p-2 dark:border-zinc-800">
+                                        <button type="button" @click="setEmbed('map')"
+                                            :aria-pressed="activeEmbed === 'map'"
+                                            :class="activeEmbed === 'map' ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50' : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100'"
+                                            class="flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors">
+                                            <svg aria-hidden="true" class="h-3.5 w-3.5" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                    d="m15 4 5 5-2 2-5-5 2-2Zm-6 6 5 5-2 2-5-5 2-2Zm-4 4 4 4-2 2-4-4 2-2Z" />
+                                                <path stroke-linecap="round" stroke-width="1.7"
+                                                    d="m17 13 4 4-6 6-4-4 6-6Z" />
+                                            </svg>
+                                            Satellite
+                                        </button>
+                                        <button type="button" @click="setEmbed('video')"
+                                            :aria-pressed="activeEmbed === 'video'"
+                                            :class="activeEmbed === 'video' ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50' : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100'"
+                                            class="flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors">
+                                            <svg aria-hidden="true" class="h-3.5 w-3.5" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="3.5" y="5" width="17" height="14" rx="2" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                    d="m10 9 5 3-5 3V9Z" />
+                                            </svg>
+                                            Video
+                                        </button>
+                                    </div>
+
+                                    <div class="bg-zinc-950 p-2 sm:p-3">
+                                        <div
+                                            class="relative h-[23rem] w-full min-w-0 max-w-full overflow-hidden rounded-xl bg-zinc-900 sm:h-[28rem] lg:h-[31rem]">
+                                            <div x-show="activeEmbed === 'map'" x-transition.opacity.duration.300ms
+                                                class="absolute inset-0 min-w-0 w-full">
+                                                <iframe class="block h-full w-full min-w-0 max-w-full border-0"
+                                                    :src="mapEmbedUrl(activeCamp.location)"
+                                                    :title="`${activeCamp.title} satellite map`" loading="lazy"
+                                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                            <div x-show="activeEmbed === 'video'" x-cloak
+                                                x-transition.opacity.duration.300ms
+                                                class="absolute inset-0 min-w-0 w-full">
+                                                <iframe class="block h-full w-full min-w-0 max-w-full border-0"
+                                                    :src="youtubeEmbedUrl(activeCamp.video_id)"
+                                                    :title="`${activeCamp.title} video`" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
+                                                    allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex flex-col gap-3 border-t border-zinc-200 px-5 py-4 dark:border-zinc-800 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                                        <p class="text-sm text-zinc-500 dark:text-zinc-400"
+                                            x-text="activeEmbed === 'video' ? 'Watch the YouTube video.' : 'Satellite view centered on the recorded coordinates.'">
+                                        </p>
+                                        <a x-show="activeEmbed === 'video'" x-cloak
+                                            :href="youtubeWatchUrl(activeCamp.video_id)" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="hover-underline shrink-0 text-xs font-medium text-sky-700 dark:text-sky-300">
+                                            Open YouTube ↗
+                                        </a>
+                                        <a x-show="activeEmbed === 'map'" x-cloak :href="mapUrl(activeCamp.location)"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="hover-underline shrink-0 text-xs font-medium text-sky-700 dark:text-sky-300">
+                                            Open satellite map ↗
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        class="flex items-center justify-center gap-2 border-t border-zinc-200 py-3 dark:border-zinc-800">
+                                        <button type="button" @click="setEmbed('map')"
+                                            class="h-1.5 rounded-full transition-all"
+                                            :class="activeEmbed === 'map' ? 'w-7 bg-zinc-500 dark:bg-zinc-500' : 'w-1.5 bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-700 dark:hover:bg-zinc-500'"
+                                            aria-label="Show satellite map"></button>
+                                        <button type="button" @click="setEmbed('video')"
+                                            class="h-1.5 rounded-full transition-all"
+                                            :class="activeEmbed === 'video' ? 'w-7 bg-zinc-500 dark:bg-zinc-500' : 'w-1.5 bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-700 dark:hover:bg-zinc-500'"
+                                            aria-label="Show video"></button>
+                                    </div>
                                 </div>
+                            </article>
+                        </template>
+
+                        <div x-show="!activeCamp" x-cloak
+                            class="flex min-h-[32rem] flex-col items-center justify-center rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-8 text-center dark:border-zinc-700 dark:bg-zinc-900/30">
+                            <div
+                                class="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-100 text-zinc-400 dark:bg-zinc-800">
+                                <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M19.5 10.5c0 4.5-7.5 9-7.5 9s-7.5-4.5-7.5-9a7.5 7.5 0 1115 0z" />
+                                </svg>
                             </div>
+                            <h2 class="mt-5 text-xl font-semibold">No location selected</h2>
+                            <p class="mt-2 max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+                                Adjust your search or filters to bring a camp back into view.
+                            </p>
                         </div>
                     </div>
-                </template>
+                </section>
+            </main>
 
-                <template x-if="!activeCamp">
-                    <div
-                        class="flex flex-col items-center justify-center flex-grow p-12 text-center text-zinc-400 dark:text-zinc-500">
-                        <span class="text-4xl mb-3">🏕️</span>
-                        <p class="font-bold uppercase tracking-wider text-sm">No Location Selected</p>
-                        <p class="text-xs mt-1">Please select an adventure from the list or clear your search filters.
-                        </p>
-                    </div>
-                </template>
-            </div>
+            <footer
+                class="mt-20 flex flex-col items-center gap-3 border-t border-zinc-200 pt-6 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+                <p class="font-mono text-[11px] uppercase tracking-[0.2em]">Made with ❤️ and ☕ by Fans for Fans</p>
+                <p>
+                    I'm not a GeoGuessr expert, some of the locations aren't pinpoint accurate. Feel free to contribute!
+                    🙂
+                </p>
+                <nav aria-label="Footer links"
+                    class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium">
+                    <a href="https://github.com/moonbrooke/hunker-down-explorer" target="_blank"
+                        rel="noopener noreferrer"
+                        class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+                        GitHub
+                    </a>
+                    <a href="https://github.com/moonbrooke/hunker-down-explorer/blob/main/CONTRIBUTING.md"
+                        target="_blank" rel="noopener noreferrer"
+                        class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+                        Contribute
+                    </a>
+                    <a href="https://github.com/moonbrooke/hunker-down-explorer/blob/main/DISCLAIMER.md" target="_blank"
+                        rel="noopener noreferrer"
+                        class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+                        Disclaimer/ToS
+                    </a>
+                    <a href="https://github.com/moonbrooke/hunker-down-explorer/blob/main/PRIVACY.md" target="_blank"
+                        rel="noopener noreferrer"
+                        class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+                        Privacy Policy
+                    </a>
+                </nav>
+            </footer>
         </div>
-
-        <footer class="text-center text-sm font-bold text-zinc-500 dark:text-zinc-400 mt-4 shrink-0">
-            Made with ❤️ and ☕ by Fans for Fans
-            ·
-            <a href="https://github.com/moonbrooke/hunker-down-explorer"
-                class="text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">GitHub</a>
-            ·
-            <a href="https://github.com/moonbrooke/hunker-down-explorer/blob/main/CONTRIBUTING.md"
-                class="text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">Contribute</a>
-            ·
-            <a href="https://github.com/moonbrooke/hunker-down-explorer/blob/main/DISCLAIMER.md"
-                class="text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">Disclaimer/ToS</a>
-            ·
-            <a href="https://github.com/moonbrooke/hunker-down-explorer/blob/main/PRIVACY.md"
-                class="text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">Privacy
-                Policy</a>
-            <p>I'm not a GeoGuessr expert, so some of the locations aren't pinpoint accurate. Feel free to contribute!
-                🙂</p>
-        </footer>
     </div>
 
-    <script src="data.js?v=1.0.2"></script>
-
+    <script src="data.js"></script>
     <script>
+        const campLocations = typeof campData === 'undefined' ? [] : campData;
+
         document.addEventListener('alpine:init', () => {
-            Alpine.data('hunkerApp', () => ({
-                isDark: document.documentElement.classList.contains('dark'),
-                searchQuery: '',
-                currentFilter: null,
-                sortBy: 'date',
-                sortDesc: true,
-                activeCamp: null,
-                mediaIndex: 0, 
+            Alpine.data('campExplorer', () => ({
+                locations: campLocations,
+                search: '',
+                filter: 'all',
+                sortKey: 'date',
+                sortDirection: 'desc',
+                selectedLocation: campLocations[0]?.location ?? null,
+                activeEmbed: 'map',
+                theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
 
                 init() {
-                    this.$watch('searchQuery', () => this.checkActiveCamp());
-                    this.$watch('currentFilter', () => this.checkActiveCamp());
-                    this.$watch('sortBy', () => this.checkActiveCamp());
-                    this.$watch('sortDesc', () => this.checkActiveCamp());
-                    this.$watch('activeCamp', () => {
-                        this.mediaIndex = 0;
+                    this.$watch('filter', () => {
+                        const firstMatch = this.filteredLocations[0];
+                        if (firstMatch) {
+                            this.selectedLocation = firstMatch.location;
+                        }
                     });
+                },
 
-                    const initialCamps = this.filteredCamps;
-                    if (initialCamps.length > 0) {
-                        this.activeCamp = initialCamps[0];
+                get filteredLocations() {
+                    const query = this.search.trim().toLowerCase();
+
+                    return this.locations
+                        .filter((camp) => {
+                            const matchesFilter =
+                                this.filter === 'all' ||
+                                (this.filter === 'stealth' && camp.stealth) ||
+                                (this.filter === 'non-stealth' && !camp.stealth);
+                            const searchableText = `${camp.title} ${camp.city} ${camp.description} ${camp.note}`.toLowerCase();
+                            return matchesFilter && (!query || searchableText.includes(query));
+                        })
+                        .sort((firstCamp, secondCamp) => {
+                            const comparison =
+                                this.sortKey === 'name'
+                                    ? firstCamp.title.localeCompare(secondCamp.title, undefined, {sensitivity: 'base'})
+                                    : this.dateValue(firstCamp.date) - this.dateValue(secondCamp.date);
+                            return this.sortDirection === 'asc' ? comparison : -comparison;
+                        });
+                },
+
+                get activeCamp() {
+                    const matches = this.filteredLocations;
+                    return matches.find((camp) => camp.location === this.selectedLocation) || matches[0] || null;
+                },
+
+                get stealthCount() {
+                    return this.locations.filter((camp) => camp.stealth).length;
+                },
+
+                count(filter) {
+                    if (filter === 'stealth') {
+                        return this.stealthCount;
                     }
+                    if (filter === 'non-stealth') {
+                        return this.locations.length - this.stealthCount;
+                    }
+                    return this.locations.length;
+                },
+
+                clearFilters() {
+                    this.search = '';
+                    this.filter = 'all';
+                },
+
+                selectCamp(location) {
+                    this.selectedLocation = location;
+                    this.activeEmbed = 'map';
+                    if (window.matchMedia('(max-width: 1023px)').matches) {
+                        this.$nextTick(() => {
+                            document.getElementById('camp-details')?.scrollIntoView({behavior: 'smooth', block: 'start'});
+                        });
+                    }
+                },
+
+                setEmbed(embed) {
+                    this.activeEmbed = embed;
+                },
+
+                nextEmbed() {
+                    this.activeEmbed = this.activeEmbed === 'video' ? 'map' : 'video';
+                },
+
+                previousEmbed() {
+                    this.activeEmbed = this.activeEmbed === 'video' ? 'map' : 'video';
                 },
 
                 toggleTheme() {
-                    this.isDark = !this.isDark;
-                    if (this.isDark) {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('color-theme', 'dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('color-theme', 'light');
+                    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.classList.toggle('dark', this.theme === 'dark');
+                    try {
+                        localStorage.setItem('camp-theme', this.theme);
+                    } catch {
+                        return;
                     }
                 },
 
-                nextMedia() {
-                    this.mediaIndex = this.mediaIndex === 0 ? 1 : 0;
-                },
-                prevMedia() {
-                    this.mediaIndex = this.mediaIndex === 1 ? 0 : 1;
+                dateValue(value) {
+                    const [year, month, day] = String(value).split('/').map(Number);
+                    return Date.UTC(year, month - 1, day);
                 },
 
-                get filteredCamps() {
-                    let result = campData.filter(camp => {
-                        if (this.currentFilter === 'stealth' && !camp.stealth) return false;
-                        if (this.currentFilter === 'non-stealth' && camp.stealth) return false;
-
-                        if (this.searchQuery) {
-                            const query = this.searchQuery.toLowerCase();
-                            const statusText = camp.stealth ? "stealth" : "non-stealth";
-                            return (
-                                camp.title.toLowerCase().includes(query) ||
-                                camp.city.toLowerCase().includes(query) ||
-                                camp.date.includes(query) ||
-                                statusText.includes(query)
-                            );
-                        }
-                        return true;
-                    });
-
-                    result.sort((a, b) => {
-                        let valA = this.sortBy === 'date' ? a.date : a.title.toLowerCase();
-                        let valB = this.sortBy === 'date' ? b.date : b.title.toLowerCase();
-
-                        if (valA < valB) return this.sortDesc ? 1 : -1;
-                        if (valA > valB) return this.sortDesc ? -1 : 1;
-                        return 0;
-                    });
-
-                    return result;
+                formatDate(value) {
+                    const [year, month, day] = String(value).split('/').map(Number);
+                    return new Intl.DateTimeFormat('en', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                        timeZone: 'UTC'
+                    }).format(new Date(Date.UTC(year, month - 1, day)));
                 },
 
-                checkActiveCamp() {
-                    const camps = this.filteredCamps;
-                    if (!camps.includes(this.activeCamp)) {
-                        this.activeCamp = camps.length > 0 ? camps[0] : null;
-                    }
+                formatDateShort(value) {
+                    const [year, month] = String(value).split('/').map(Number);
+                    return new Intl.DateTimeFormat('en', {
+                        month: 'short',
+                        year: 'numeric',
+                        timeZone: 'UTC'
+                    }).format(new Date(Date.UTC(year, month - 1, 1)));
+                },
+
+                youtubeThumbnailUrl(videoId) {
+                    return `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hq720.jpg`;
+                },
+
+                youtubeEmbedUrl(videoId) {
+                    return `https://www.youtube.com/embed/${encodeURIComponent(videoId)}`;
+                },
+
+                youtubeWatchUrl(videoId) {
+                    return `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+                },
+
+                mapEmbedUrl(location) {
+                    return `https://www.google.com/maps?q=${encodeURIComponent(location)}&t=k&z=16&output=embed`;
+                },
+
+                mapUrl(location) {
+                    return `https://www.google.com/maps?q=${encodeURIComponent(location)}&t=k&z=16`;
                 }
             }));
         });
     </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
 </body>
 
 </html>
