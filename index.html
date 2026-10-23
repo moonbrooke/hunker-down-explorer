@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#18181b" />
+    <meta name="theme-color" content="#111013" />
     <meta name="description" content="Catalog of Steve Wallis's camping locations." />
     <title>HUNKER DOWN CATALOG</title>
     <link rel="icon" href="https://fav.farm/🏕️" />
@@ -22,12 +22,347 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet" />
     <style>
+        :root {
+            --paper: #f3eee0;
+            --panel: #fffdf5;
+            --wash: #e7dfc9;
+            --ink: #12100e;
+            --ink-soft: #35302a;
+            --muted: #6a6355;
+            --faint: #8a8372;
+            --line: #12100e;
+            --active: #ffd400;
+            --accent: #d10062;
+            --cyan: #23d3ff;
+            --orange: #ff7a18;
+            --note: #ffec6e;
+            --shadow: #12100e;
+            --dot: rgba(18, 16, 14, 0.16);
+            --on-accent: #12100e;
+            --font-display: "Anton", "Arial Black", Impact, sans-serif;
+            --font-body: "Archivo", Tahoma, Verdana, Arial, sans-serif;
+            --font-label: "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+        }
+
+        html.dark {
+            --paper: #111013;
+            --panel: #1b1a20;
+            --wash: #28272e;
+            --ink: #f6f0df;
+            --ink-soft: #e3dcc9;
+            --muted: #b4ac99;
+            --faint: #8f8877;
+            --line: #f6f0df;
+            --active: #c6ff3d;
+            --accent: #ff5fa8;
+            --cyan: #4fd8ff;
+            --orange: #ffa04d;
+            --shadow: #f6f0df;
+            --dot: rgba(246, 240, 223, 0.13);
+        }
+
         [x-cloak] {
             display: none !important;
         }
+
+        /* --- base canvas ------------------------------------------------------ */
+
+        html {
+            background-color: var(--paper);
+        }
+
+        body {
+            background-image: radial-gradient(var(--dot) 1px, transparent 1.4px);
+            background-size: 18px 18px;
+            background-attachment: fixed;
+            color: var(--ink);
+            font-family: var(--font-body);
+        }
+
+        /* higher specificity than body's bg-zinc-50 / dark:bg-zinc-900 utilities */
+        body[class] {
+            background-color: var(--paper);
+        }
+
+        h1,
+        h2,
+        h3,
+        header a[href="#top"] {
+            font-family: var(--font-display);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.015em;
+        }
+
+        header a[href="#top"] {
+            letter-spacing: 0.06em;
+        }
+
+        .font-mono {
+            font-family: var(--font-label);
+        }
+
+        /* --- geometry: no soft corners, chunky rules, hard shadows ------------ */
+
+        [class*="rounded-"] {
+            border-radius: 0;
+        }
+
+        .border {
+            border-width: 3px;
+            border-style: solid;
+            border-color: var(--line);
+        }
+
+        .border-t {
+            border-top-width: 3px;
+            border-color: var(--line);
+        }
+
+        .border-b {
+            border-bottom-width: 3px;
+            border-color: var(--line);
+        }
+
+        [class*="border-"] {
+            border-color: var(--line);
+        }
+
+        .border-dashed {
+            border-style: dashed;
+        }
+
+        .shadow-sm,
+        .shadow-lg {
+            box-shadow: 6px 6px 0 var(--shadow);
+        }
+
+        /* --- surfaces --------------------------------------------------------- */
+
+        .bg-zinc-50,
+        .bg-white,
+        [class*="bg-zinc-900/30"] {
+            background-color: var(--panel);
+        }
+
+        .bg-white\/90 {
+            background-color: var(--panel);
+        }
+
+        .bg-zinc-100 {
+            background-color: var(--wash);
+        }
+
+        .bg-zinc-200 {
+            background-color: var(--active);
+        }
+
+        .bg-zinc-300 {
+            background-color: var(--faint);
+        }
+
+        .bg-zinc-500 {
+            background-color: var(--ink);
+        }
+
+        .bg-zinc-900,
+        .bg-zinc-950 {
+            background-color: #000;
+        }
+
+        .bg-amber-50\/70 {
+            background-color: var(--note);
+        }
+
+        .bg-sky-100 {
+            background-color: var(--cyan);
+        }
+
+        .bg-orange-100 {
+            background-color: var(--orange);
+        }
+
+        .bg-sky-500,
+        .bg-orange-500 {
+            background-color: var(--on-accent);
+        }
+
+        /* --- type colours ----------------------------------------------------- */
+
+        .text-zinc-800,
+        .text-zinc-900 {
+            color: var(--ink);
+        }
+
+        .text-zinc-600 {
+            color: var(--ink-soft);
+        }
+
+        .text-zinc-500 {
+            color: var(--muted);
+        }
+
+        .text-zinc-400 {
+            color: var(--faint);
+        }
+
+        .text-sky-700,
+        .dark\:text-sky-300 {
+            color: var(--accent);
+        }
+
+        .text-red-400 {
+            color: var(--accent);
+        }
+
+        .text-amber-800,
+        .text-amber-900\/80,
+        .dark\:text-amber-200,
+        .dark\:text-amber-100\/70 {
+            color: var(--on-accent);
+        }
+
+        .dark\:text-zinc-50,
+        .dark\:text-zinc-100,
+        .dark\:text-zinc-200,
+        .dark\:text-zinc-300 {
+            color: var(--ink);
+        }
+
+        .dark\:text-zinc-400,
+        .dark\:text-zinc-500 {
+            color: var(--muted);
+        }
+
+        .dark\:text-orange-300 {
+            color: var(--orange);
+        }
+
+        /* badge text sits on bright fills, so keep it dark on top of the above */
+        .bg-sky-100,
+        .bg-orange-100 {
+            color: var(--on-accent);
+        }
+
+        /* --- active / selected controls --------------------------------------- */
+
+        button.bg-zinc-200,
+        button.dark\:bg-zinc-700 {
+            background-color: var(--active);
+            color: var(--on-accent);
+            border-color: var(--on-accent);
+        }
+
+        button[aria-pressed="true"] {
+            color: var(--on-accent);
+        }
+
+        button[aria-pressed="true"] * {
+            color: var(--on-accent);
+        }
+
+        /* carousel pips: flat squares, never lime */
+        button[aria-label="Show satellite map"],
+        button[aria-label="Show video"] {
+            background-color: var(--faint);
+        }
+
+        button[aria-label="Show satellite map"].bg-zinc-500,
+        button[aria-label="Show video"].bg-zinc-500 {
+            background-color: var(--accent);
+        }
+
+        /* --- hover states ------------------------------------------------------ */
+
+        .hover\:bg-zinc-50:hover,
+        .hover\:bg-zinc-100:hover,
+        .hover\:bg-zinc-200:hover,
+        .dark\:hover\:bg-zinc-800:hover,
+        .dark\:hover\:bg-zinc-800\/50:hover {
+            background-color: var(--wash);
+        }
+
+        .hover\:bg-zinc-400:hover,
+        .dark\:hover\:bg-zinc-500:hover {
+            background-color: var(--accent);
+        }
+
+        .hover\:text-zinc-900:hover,
+        .hover\:text-zinc-700:hover,
+        .dark\:hover\:text-zinc-100:hover,
+        .dark\:hover\:text-zinc-200:hover,
+        .hover\:text-sky-700:hover,
+        .dark\:hover\:text-sky-300:hover {
+            color: var(--accent);
+        }
+
+        [class*="hover:border-"]:hover {
+            border-color: var(--accent);
+        }
+
+        .hover\:underline:hover {
+            text-decoration-thickness: 3px;
+            text-underline-offset: 3px;
+        }
+
+        @media (hover: hover) {
+            button.group:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 9px 9px 0 var(--shadow);
+            }
+
+            header>div>button:hover {
+                background-color: var(--active);
+                color: var(--on-accent);
+            }
+        }
+
+        /* --- search field ------------------------------------------------------ */
+
+        #camp-search {
+            background-color: var(--panel);
+            border-color: var(--line);
+            color: var(--ink);
+            font-family: var(--font-label);
+            font-size: 0.8125rem;
+        }
+
+        #camp-search::placeholder {
+            color: var(--faint);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        #camp-search:focus {
+            outline: none;
+            box-shadow: 4px 4px 0 var(--shadow);
+        }
+
+        /* --- header toggle button --------------------------------------------- */
+
+        header>div>button {
+            background-color: var(--panel);
+            border: 3px solid var(--line);
+            box-shadow: 4px 4px 0 var(--shadow);
+            color: var(--ink);
+        }
+
+        header>div>button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 0 0 0 var(--shadow);
+        }
+
+        /* --- highlighter on the headline -------------------------------------- */
+
+        h1 .text-sky-700,
+        h1 .dark\:text-sky-300 {
+            box-shadow: inset 0 -0.16em 0 var(--active);
+        }
+
+        /* --- links, selection, focus, scrollbars ------------------------------ */
 
         .hover-underline {
             position: relative;
@@ -36,15 +371,15 @@
 
         .hover-underline::after {
             position: absolute;
-            bottom: -2px;
+            bottom: -3px;
             left: 0;
             width: 100%;
-            height: 1px;
+            height: 3px;
             content: '';
             background-color: currentColor;
             transform: scaleX(0);
             transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
+            transition: transform 0.2s steps(4, end);
         }
 
         .hover-underline:hover::after {
@@ -52,22 +387,42 @@
             transform-origin: bottom left;
         }
 
+        ::selection {
+            background-color: var(--active);
+            color: var(--on-accent);
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
         .scrollbar-thin {
-            scrollbar-color: #a1a1aa transparent;
+            scrollbar-color: var(--line) var(--wash);
             scrollbar-width: thin;
         }
 
         .scrollbar-thin::-webkit-scrollbar {
-            width: 6px;
+            width: 10px;
         }
 
         .scrollbar-thin::-webkit-scrollbar-track {
-            background: transparent;
+            background: var(--wash);
         }
 
         .scrollbar-thin::-webkit-scrollbar-thumb {
-            background: #a1a1aa;
-            border-radius: 9999px;
+            background: var(--line);
+            border-radius: 0;
+        }
+
+        /* keep the responsive divider behaviour of the stats block */
+        @media (min-width: 40rem) {
+            .sm\:border-t-0 {
+                border-top-width: 0;
+            }
         }
     </style>
     <script>
